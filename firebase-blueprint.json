@@ -1,0 +1,83 @@
+{
+  "entities": {
+    "settings": {
+      "fields": {
+        "storeName": { "type": "string" },
+        "tagline": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "logoType": { "type": "string" },
+        "themeId": { "type": "string" },
+        "primaryColor": { "type": "string" },
+        "primaryHover": { "type": "string" },
+        "secondaryColor": { "type": "string" },
+        "backgroundColor": { "type": "string" },
+        "headerAnnouncementText": { "type": "string" },
+        "announcementActive": { "type": "boolean" },
+        "supportEmail": { "type": "string" },
+        "supportPhone": { "type": "string" },
+        "addressText": { "type": "string" }
+      }
+    },
+    "users": {
+      "fields": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "avatarUrl": { "type": "string" }
+      }
+    },
+    "products": {
+      "fields": {
+        "name": { "type": "string" },
+        "sku": { "type": "string" },
+        "sellingPrice": { "type": "number" },
+        "mrp": { "type": "number" },
+        "category": { "type": "string" },
+        "subcategory": { "type": "string" },
+        "slug": { "type": "string" },
+        "description": { "type": "string" },
+        "fabric": { "type": "string" },
+        "work": { "type": "string" },
+        "isBestseller": { "type": "boolean" },
+        "isNewArrival": { "type": "boolean" }
+      }
+    },
+    "categories": {
+      "fields": {
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      }
+    },
+    "banners": {
+      "fields": {
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "ctaText": { "type": "string" },
+        "ctaLink": { "type": "string" }
+      }
+    },
+    "coupons": {
+      "fields": {
+        "code": { "type": "string" },
+        "discountType": { "type": "string" },
+        "discountValue": { "type": "number" }
+      }
+    },
+    "orders": {
+      "fields": {
+        "userId": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "orderStatus": { "type": "string" }
+      }
+    },
+    "reviews": {
+      "fields": {
+        "productId": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+!.env.production
+
+# Local source bundles are backups, not application source.
+vedaaya_source_code.zip
+vedaaya_source_code.tar.gz
+public/source_code_audit.tar.gz
+
+# Obsolete local Node backend; production uses php-backend/.
+/server.ts
+/src/server/

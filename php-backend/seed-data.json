@@ -1,0 +1,4417 @@
+{
+  "settings": {
+    "storeName": "Nandita Fashion",
+    "tagline": "Timeless Indian Elegance • Handcrafted Ethnic Kurtis & Festive Edit",
+    "supportEmail": "care@nanditafashion.com",
+    "supportPhone": "+91 98765 43210",
+    "gstNumber": "07AAACV1234F1Z8",
+    "freeShippingThreshold": 999,
+    "standardShippingFee": 99,
+    "announcementText": "✨ Festive Launch: Use code NANDITA20 for Flat 20% OFF | Free Shipping on orders above ₹999 | Express 48-hr Dispatch",
+    "isCodEnabled": true,
+    "backendApiUrl": "https://api.skleup.com/api/ecommerce",
+    "currencySymbol": "₹"
+  },
+  "categories": [
+    {
+      "id": "cat-women",
+      "name": "Women",
+      "slug": "women",
+      "description": "Artisanal kurtis, opulent kurta sets, sarees, and modern fusion wear",
+      "imageUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1200&q=80",
+      "subcategories": [
+        "Kurtas & Kurtis",
+        "Kurta Sets",
+        "Sarees",
+        "Co-ord Sets",
+        "Plus Size",
+        "Ethnic Dresses",
+        "Dupattas"
+      ],
+      "subMenus": [
+        {
+          "id": "sub-women-indian",
+          "name": "Indianwear",
+          "slug": "indianwear",
+          "featured": true,
+          "subcategories": [
+            {
+              "id": "sub2-kurtis",
+              "name": "Kurtas & Kurtis",
+              "slug": "kurtis"
+            },
+            {
+              "id": "sub2-kurta-sets",
+              "name": "Kurta Sets (2 & 3 Pc)",
+              "slug": "kurta-sets"
+            },
+            {
+              "id": "sub2-sarees",
+              "name": "Sarees & Drapes",
+              "slug": "sarees"
+            },
+            {
+              "id": "sub2-anarkalis",
+              "name": "Anarkali Suits",
+              "slug": "anarkalis"
+            },
+            {
+              "id": "sub2-chikankari",
+              "name": "Chikankari Collection",
+              "slug": "chikankari"
+            },
+            {
+              "id": "sub2-lehengas",
+              "name": "Festive Lehengas",
+              "slug": "lehengas"
+            },
+            {
+              "id": "sub2-dupattas",
+              "name": "Dupattas & Stoles",
+              "slug": "dupattas"
+            }
+          ]
+        },
+        {
+          "id": "sub-women-western",
+          "name": "Western & Fusion",
+          "slug": "western-fusion",
+          "featured": true,
+          "subcategories": [
+            {
+              "id": "sub2-coords",
+              "name": "Co-ord Sets",
+              "slug": "co-ord-sets"
+            },
+            {
+              "id": "sub2-dresses",
+              "name": "Ethnic Maxi Dresses",
+              "slug": "ethnic-dresses"
+            },
+            {
+              "id": "sub2-tops",
+              "name": "Tops & Tunics",
+              "slug": "tops-tunics"
+            },
+            {
+              "id": "sub2-bottoms",
+              "name": "Pants & Palazzos",
+              "slug": "bottom-wear"
+            },
+            {
+              "id": "sub2-jackets",
+              "name": "Ethnic Shrugs & Jackets",
+              "slug": "jackets"
+            }
+          ]
+        },
+        {
+          "id": "sub-women-plus",
+          "name": "Plus Size Store",
+          "slug": "plus-size-women",
+          "featured": true,
+          "subcategories": [
+            {
+              "id": "sub2-plus-kurtis",
+              "name": "Plus Size Kurtis (2XL-5XL)",
+              "slug": "plus-size"
+            },
+            {
+              "id": "sub2-plus-sets",
+              "name": "Curvy Kurta Sets",
+              "slug": "plus-size-sets"
+            },
+            {
+              "id": "sub2-plus-comfort",
+              "name": "Breathable Cotton 3XL-5XL",
+              "slug": "plus-size-cotton"
+            }
+          ]
+        },
+        {
+          "id": "sub-women-accs",
+          "name": "Footwear & Accessories",
+          "slug": "women-accessories",
+          "subcategories": [
+            {
+              "id": "sub2-juttis",
+              "name": "Handcrafted Juttis & Mojaris",
+              "slug": "juttis"
+            },
+            {
+              "id": "sub2-flats",
+              "name": "Kolhapuris & Flats",
+              "slug": "flats"
+            },
+            {
+              "id": "sub2-potlis",
+              "name": "Embroidered Potlis & Clutches",
+              "slug": "potlis"
+            },
+            {
+              "id": "sub2-jewellery",
+              "name": "Temple & Kundan Jewellery",
+              "slug": "jewellery"
+            }
+          ]
+        }
+      ],
+      "featured": true,
+      "displayOrder": 1
+    },
+    {
+      "id": "cat-men",
+      "name": "Men",
+      "slug": "men",
+      "description": "Handcrafted kurtas, Nehru jackets, dhoti sets, and celebration wear for men",
+      "imageUrl": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1200&q=80",
+      "subcategories": [
+        "Ethnic Kurtas",
+        "Short Kurtas",
+        "Nehru Jackets",
+        "Kurta Pyjama Sets",
+        "Linen Shirts",
+        "Ethnic Footwear"
+      ],
+      "subMenus": [
+        {
+          "id": "sub-men-ethnic",
+          "name": "Ethnic Topwear",
+          "slug": "men-ethnic-topwear",
+          "featured": true,
+          "subcategories": [
+            {
+              "id": "sub2-men-long-kurtas",
+              "name": "Long Ethnic Kurtas",
+              "slug": "men-long-kurtas"
+            },
+            {
+              "id": "sub2-men-short-kurtas",
+              "name": "Short & Casual Kurtas",
+              "slug": "men-short-kurtas"
+            },
+            {
+              "id": "sub2-men-nehru",
+              "name": "Nehru & Bundi Jackets",
+              "slug": "men-nehru-jackets"
+            },
+            {
+              "id": "sub2-men-sets",
+              "name": "Kurta Pyjama Sets",
+              "slug": "men-kurta-sets"
+            },
+            {
+              "id": "sub2-men-festive",
+              "name": "Festive Silk Kurtas",
+              "slug": "men-festive-kurtas"
+            }
+          ]
+        },
+        {
+          "id": "sub-men-casual",
+          "name": "Casuals & Shirts",
+          "slug": "men-casuals",
+          "subcategories": [
+            {
+              "id": "sub2-men-linen",
+              "name": "Pure Linen Shirts",
+              "slug": "men-linen-shirts"
+            },
+            {
+              "id": "sub2-men-cotton-shirts",
+              "name": "Hand-Block Cotton Shirts",
+              "slug": "men-cotton-shirts"
+            },
+            {
+              "id": "sub2-men-trousers",
+              "name": "Chinos & Ethnic Trousers",
+              "slug": "men-trousers"
+            },
+            {
+              "id": "sub2-men-pyjamas",
+              "name": "Churidars & Dhotis",
+              "slug": "men-bottoms"
+            }
+          ]
+        },
+        {
+          "id": "sub-men-footwear",
+          "name": "Footwear & Accs",
+          "slug": "men-footwear-accs",
+          "subcategories": [
+            {
+              "id": "sub2-men-mojaris",
+              "name": "Ethnic Mojaris & Juttis",
+              "slug": "men-mojaris"
+            },
+            {
+              "id": "sub2-men-sandals",
+              "name": "Leather Kolhapuri Sandals",
+              "slug": "men-sandals"
+            },
+            {
+              "id": "sub2-men-brooches",
+              "name": "Kurta Buttons & Pocket Squares",
+              "slug": "men-accessories"
+            }
+          ]
+        }
+      ],
+      "featured": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "cat-kurtis",
+      "name": "Kurtis & Sets",
+      "slug": "kurtis",
+      "description": "Everyday, straight, A-line, short, and 3-piece artisanal kurtis & sets",
+      "imageUrl": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80",
+      "subcategories": [
+        "Cotton Kurtis",
+        "Embroidered Kurtis",
+        "Office Wear",
+        "Short Kurtis",
+        "A-Line Kurtis",
+        "Chikankari"
+      ],
+      "subMenus": [
+        {
+          "id": "sub-kurti-styles",
+          "name": "Kurti Silhouettes",
+          "slug": "kurti-silhouettes",
+          "subcategories": [
+            {
+              "id": "sub2-straight",
+              "name": "Straight Cut Kurtis",
+              "slug": "straight-kurtis"
+            },
+            {
+              "id": "sub2-aline",
+              "name": "A-Line & Flared Kurtis",
+              "slug": "aline-kurtis"
+            },
+            {
+              "id": "sub2-short",
+              "name": "Short & Hip Length Kurtis",
+              "slug": "short-kurtis"
+            },
+            {
+              "id": "sub2-angrakha",
+              "name": "Angrakha & Overlay Kurtis",
+              "slug": "angrakha-kurtis"
+            }
+          ]
+        },
+        {
+          "id": "sub-kurti-crafts",
+          "name": "Crafts & Weaves",
+          "slug": "kurti-crafts",
+          "subcategories": [
+            {
+              "id": "sub2-block-print",
+              "name": "Jaipuri Hand Block Print",
+              "slug": "hand-block"
+            },
+            {
+              "id": "sub2-chikankari-kurtis",
+              "name": "Lucknowi Chikankari",
+              "slug": "chikankari"
+            },
+            {
+              "id": "sub2-gotta",
+              "name": "Gotta Patti Embellished",
+              "slug": "gotta-patti"
+            },
+            {
+              "id": "sub2-cotton-weave",
+              "name": "60s Pure Cambric Cotton",
+              "slug": "pure-cotton"
+            }
+          ]
+        },
+        {
+          "id": "sub-kurti-sets-menu",
+          "name": "Sets & Suits",
+          "slug": "sets-and-suits",
+          "subcategories": [
+            {
+              "id": "sub2-3pc",
+              "name": "3-Piece Festive Kurta Sets",
+              "slug": "kurta-sets"
+            },
+            {
+              "id": "sub2-2pc",
+              "name": "Kurti + Pant Daily Sets",
+              "slug": "kurti-pant"
+            },
+            {
+              "id": "sub2-sharara",
+              "name": "Sharara & Gharara Sets",
+              "slug": "sharara-sets"
+            }
+          ]
+        }
+      ],
+      "featured": true,
+      "displayOrder": 3
+    },
+    {
+      "id": "cat-plus-size",
+      "name": "Plus Size (2XL-5XL)",
+      "slug": "plus-size",
+      "description": "Flattering ethnic silhouettes tailored specifically for curvy fits",
+      "imageUrl": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1200&q=80",
+      "subcategories": [
+        "Plus Size Kurtis",
+        "Plus Size Kurta Sets",
+        "Plus Size Festive",
+        "Breathable Cottons"
+      ],
+      "subMenus": [
+        {
+          "id": "sub-plus-sizes",
+          "name": "Shop by Size",
+          "slug": "shop-by-size",
+          "subcategories": [
+            {
+              "id": "sub2-2xl",
+              "name": "Size 2XL (Bust 44\")",
+              "slug": "plus-size-2xl"
+            },
+            {
+              "id": "sub2-3xl",
+              "name": "Size 3XL (Bust 46\")",
+              "slug": "plus-size-3xl"
+            },
+            {
+              "id": "sub2-4xl",
+              "name": "Size 4XL (Bust 48\")",
+              "slug": "plus-size-4xl"
+            },
+            {
+              "id": "sub2-5xl",
+              "name": "Size 5XL (Bust 50\")",
+              "slug": "plus-size-5xl"
+            }
+          ]
+        },
+        {
+          "id": "sub-plus-styles",
+          "name": "Curved Tailoring",
+          "slug": "curved-tailoring",
+          "subcategories": [
+            {
+              "id": "sub2-plus-straight",
+              "name": "Straight Relaxed Sets",
+              "slug": "plus-size"
+            },
+            {
+              "id": "sub2-plus-anarkali",
+              "name": "Flared Flattering Anarkalis",
+              "slug": "plus-size-anarkali"
+            },
+            {
+              "id": "sub2-plus-workwear",
+              "name": "Office Workwear Edit",
+              "slug": "plus-size-office"
+            }
+          ]
+        }
+      ],
+      "featured": true,
+      "displayOrder": 4
+    },
+    {
+      "id": "cat-luxe",
+      "name": "Luxe & Festive",
+      "slug": "luxe-festive",
+      "description": "Opulent Chanderi silk, Banarasi brocade, and royal Zari detailing for weddings & occasions",
+      "imageUrl": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1200&q=80",
+      "subcategories": [
+        "Chanderi Sets",
+        "Zari Embroidered",
+        "Banarasi Silk",
+        "Festive Gowns",
+        "Wedding Guest"
+      ],
+      "subMenus": [
+        {
+          "id": "sub-festive-fabrics",
+          "name": "Royal Fabrics",
+          "slug": "royal-fabrics",
+          "subcategories": [
+            {
+              "id": "sub2-chanderi",
+              "name": "Pure Chanderi Silk",
+              "slug": "chanderi-silk"
+            },
+            {
+              "id": "sub2-banarasi",
+              "name": "Banarasi Weaves",
+              "slug": "banarasi"
+            },
+            {
+              "id": "sub2-mulmul-silk",
+              "name": "Silk Mulmul Blends",
+              "slug": "mulmul-silk"
+            }
+          ]
+        },
+        {
+          "id": "sub-festive-occasions",
+          "name": "Celebrations",
+          "slug": "celebrations",
+          "subcategories": [
+            {
+              "id": "sub2-wedding",
+              "name": "Wedding Guest Collection",
+              "slug": "wedding-guest"
+            },
+            {
+              "id": "sub2-haldi",
+              "name": "Haldi & Mehendi Yellows & Greens",
+              "slug": "haldi-mehendi"
+            },
+            {
+              "id": "sub2-pooja",
+              "name": "Pooja & Festive Rituals",
+              "slug": "pooja-festive"
+            }
+          ]
+        }
+      ],
+      "featured": true,
+      "displayOrder": 5
+    },
+    {
+      "id": "cat-accessories",
+      "name": "Accessories",
+      "slug": "accessories",
+      "description": "Handcrafted juttis, embellished potli bags, and heirloom temple jewellery",
+      "imageUrl": "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=600&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1200&q=80",
+      "subcategories": [
+        "Juttis",
+        "Mojaris",
+        "Potli Bags",
+        "Kundan Jewellery",
+        "Dupattas"
+      ],
+      "subMenus": [
+        {
+          "id": "sub-footwear",
+          "name": "Footwear",
+          "slug": "footwear",
+          "subcategories": [
+            {
+              "id": "sub2-embroidered-juttis",
+              "name": "Embroidered Leather Juttis",
+              "slug": "juttis"
+            },
+            {
+              "id": "sub2-kolhapuris",
+              "name": "Kolhapuri Flats",
+              "slug": "kolhapuris"
+            },
+            {
+              "id": "sub2-ethnic-heels",
+              "name": "Embellished Block Heels",
+              "slug": "heels"
+            }
+          ]
+        },
+        {
+          "id": "sub-bags-jewels",
+          "name": "Bags & Jewellery",
+          "slug": "bags-jewellery",
+          "subcategories": [
+            {
+              "id": "sub2-potli-bags",
+              "name": "Velvet & Zari Potlis",
+              "slug": "potlis"
+            },
+            {
+              "id": "sub2-clutches",
+              "name": "Box Clutches",
+              "slug": "clutches"
+            },
+            {
+              "id": "sub2-jhumkas",
+              "name": "Kundan & Pearl Jhumkas",
+              "slug": "jhumkas"
+            }
+          ]
+        }
+      ],
+      "featured": false,
+      "displayOrder": 6
+    }
+  ],
+  "collections": [
+    {
+      "id": "col-summer-cotton",
+      "name": "Pure Cotton Comfort",
+      "slug": "summer-cotton",
+      "title": "Pure Cotton Sanctuary",
+      "subtitle": "Breathable, 60s count cambric cotton for effortless daylong ease",
+      "bannerUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1200&q=80",
+      "featured": true
+    },
+    {
+      "id": "col-office-edit",
+      "name": "Office & Workwear Edit",
+      "slug": "office-edit",
+      "title": "Minimalist Workwear",
+      "subtitle": "Smart silhouettes, structured collars, and subtle hand-embroidery",
+      "bannerUrl": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80",
+      "featured": true
+    },
+    {
+      "id": "col-festive-silk",
+      "name": "Festive Chanderi & Zari",
+      "slug": "festive-chanderi",
+      "title": "Royal Festive Splendor",
+      "subtitle": "Opulent weaves with rich Gotta Patti and delicate Zari detailing",
+      "bannerUrl": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1200&q=80",
+      "featured": true
+    },
+    {
+      "id": "col-under-999",
+      "name": "Budget Delights Under ₹999",
+      "slug": "under-999",
+      "title": "Everyday Steals Under ₹999",
+      "subtitle": "Handpicked daily wear kurtis that deliver unmatched quality",
+      "bannerUrl": "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=1200&q=80",
+      "featured": true
+    }
+  ],
+  "banners": [
+    {
+      "id": "hero-1",
+      "title": "The Festive Heirloom Edit",
+      "subtitle": "Hand-embroidered Chanderi & Zari Kurta Sets crafted for celebrations",
+      "ctaText": "Explore Kurta Sets",
+      "ctaLink": "/kurta-sets",
+      "imageUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1600&q=85",
+      "desktopImage": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1600&q=85",
+      "mobileImage": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=85",
+      "badge": "NEW FESTIVE LAUNCH",
+      "active": true,
+      "isActive": true,
+      "displayOrder": 1
+    },
+    {
+      "id": "hero-2",
+      "title": "Artisanal Pure Cotton Sets",
+      "subtitle": "Featherlight 60s Mulmul with intricate neck embroidery and matching pants",
+      "ctaText": "Shop Cotton Kurtis",
+      "ctaLink": "/kurtis",
+      "imageUrl": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&q=85",
+      "desktopImage": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&q=85",
+      "mobileImage": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85",
+      "badge": "BESTSELLER COLLECTION",
+      "active": true,
+      "isActive": true,
+      "displayOrder": 2
+    },
+    {
+      "id": "hero-3",
+      "title": "Inclusive Luxury: 2XL to 5XL",
+      "subtitle": "Every curve celebrated in breathable fabrics and flattering ethnic cuts",
+      "ctaText": "Shop Plus Size",
+      "ctaLink": "/plus-size",
+      "imageUrl": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1600&q=85",
+      "desktopImage": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1600&q=85",
+      "mobileImage": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=85",
+      "badge": "CURVE EDITION",
+      "active": true,
+      "isActive": true,
+      "displayOrder": 3
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-nandita-01",
+      "name": "Olive Floral Printed Long Cape & Palazzo 3-Piece Co-ord Set",
+      "slug": "olive-floral-printed-long-cape-palazzo-co-ord-set",
+      "sku": "NF-OLV-CAPE-01",
+      "category": "Kurta Sets",
+      "subcategory": "Co-ord Sets",
+      "collections": [
+        "Festive Chanderi & Zari",
+        "Everyday Elegance"
+      ],
+      "mrp": 3999,
+      "sellingPrice": 2499,
+      "costPrice": 1100,
+      "discountPercent": 38,
+      "rating": 4.9,
+      "reviewCount": 86,
+      "images": [
+        {
+          "id": "img-nf-1-1",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Olive Floral Printed Long Cape with Pleated Palazzo Inner Set",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-nf-1-2",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Gold border lace and hanging tassel details on jacket front",
+          "type": "detail"
+        },
+        {
+          "id": "img-nf-1-3",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Full length silhouette and dark olive pleated palazzo",
+          "type": "back"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-nf-1-m",
+          "sku": "NF-OLV-01-M",
+          "color": "Olive Green",
+          "colorHex": "#556B2F",
+          "size": "M",
+          "stock": 15
+        },
+        {
+          "id": "v-nf-1-l",
+          "sku": "NF-OLV-01-L",
+          "color": "Olive Green",
+          "colorHex": "#556B2F",
+          "size": "L",
+          "stock": 18
+        },
+        {
+          "id": "v-nf-1-xl",
+          "sku": "NF-OLV-01-XL",
+          "color": "Olive Green",
+          "colorHex": "#556B2F",
+          "size": "XL",
+          "stock": 14
+        },
+        {
+          "id": "v-nf-1-xxl",
+          "sku": "NF-OLV-01-XXL",
+          "color": "Olive Green",
+          "colorHex": "#556B2F",
+          "size": "XXL",
+          "stock": 10
+        }
+      ],
+      "fabric": "Pure Georgette & Satin Crepe",
+      "work": "Floral Digital Print with Antique Gold Zari Border & Hanging Tassels",
+      "pattern": "Floral & Botanical",
+      "sleeve": "Full Sleeve Cape with Sleeveless Crop Inner",
+      "neckType": "Square Neck Inner with Open Front Floor-Length Cape",
+      "occasion": "Festive Celebrations & Wedding Party Wear",
+      "fit": "Flared Silhouette",
+      "length": "Floor Length Cape (52\") / Cropped Inner (15\") / Palazzo (38\")",
+      "bottomType": "Pleated Flared Palazzo Pants",
+      "dupattaIncluded": false,
+      "description": "A masterpiece 3-piece festive ensemble by Nandita Fashion featuring a floor-length floral printed georgette cape jacket adorned with antique gold zari border lace and handmade tassels. Layered over a solid dark olive pleated palazzo and matching cropped inner.",
+      "careInstructions": [
+        "Dry clean recommended for first wash",
+        "Gentle hand wash in cold water thereafter",
+        "Do not wring or bleach",
+        "Steam iron on low setting"
+      ],
+      "features": [
+        "3-Piece Fusion Co-ord Set (Cape + Crop Top + Palazzo)",
+        "Floor-sweeping Floral Georgette Overlay",
+        "Intricate Antique Gold Zari Lace Borders with Tassels",
+        "Pleated Elasticated Palazzo with High Flare"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "olive kurti",
+        "cape set",
+        "3 piece co ord",
+        "festive wear",
+        "nandita fashion",
+        "palazzo set"
+      ],
+      "createdAt": "2026-08-23T00:00:00Z"
+    },
+    {
+      "id": "prod-nandita-02",
+      "name": "Sea Green Zari & Pearl Tassel Embroidered Sharara Set",
+      "slug": "sea-green-zari-pearl-tassel-embroidered-sharara-set",
+      "sku": "NF-SGN-SHAR-02",
+      "category": "Kurta Sets",
+      "subcategory": "Sharara & Gharara Sets",
+      "collections": [
+        "Festive Chanderi & Zari",
+        "Luxe & Festive"
+      ],
+      "mrp": 4299,
+      "sellingPrice": 2699,
+      "costPrice": 1150,
+      "discountPercent": 37,
+      "rating": 4.9,
+      "reviewCount": 64,
+      "images": [
+        {
+          "id": "img-nf-2-1",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Pastel Sea Green Embroidered Sleeveless Kurti with Pearl Hem Sharara",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-nf-2-2",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Multicolor threadwork and hanging pearl beads close-up",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-nf-2-m",
+          "sku": "NF-SGN-02-M",
+          "color": "Pastel Sea Green",
+          "colorHex": "#7AA09E",
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "id": "v-nf-2-l",
+          "sku": "NF-SGN-02-L",
+          "color": "Pastel Sea Green",
+          "colorHex": "#7AA09E",
+          "size": "L",
+          "stock": 16
+        },
+        {
+          "id": "v-nf-2-xl",
+          "sku": "NF-SGN-02-XL",
+          "color": "Pastel Sea Green",
+          "colorHex": "#7AA09E",
+          "size": "XL",
+          "stock": 12
+        },
+        {
+          "id": "v-nf-2-xxl",
+          "sku": "NF-SGN-02-XXL",
+          "color": "Pastel Sea Green",
+          "colorHex": "#7AA09E",
+          "size": "XXL",
+          "stock": 8
+        }
+      ],
+      "fabric": "Viscose Organza Top & Flowing Satin Silk Sharara",
+      "work": "Multi-Color Resham Embroidery, Mirror Accents & Hanging Pearl Bead Hemline",
+      "pattern": "Geometric & Floral Yoke",
+      "sleeve": "Sleeveless",
+      "neckType": "Round Neck with Choker Scarf Dupatta",
+      "occasion": "Sangeet, Mehendi & Wedding Celebrations",
+      "fit": "Short Fitted Kurti with Extra Flared Sharara",
+      "length": "Short Kurti (24\") / Sharara (40\")",
+      "bottomType": "Flared Satin Sharara Pants",
+      "dupattaIncluded": true,
+      "description": "Chic and contemporary, this Nandita Fashion sea-green set highlights a sleeveless short kurti richly embroidered with geometric resham motifs and a playful pearl-bead fringe along the scalloped hem, paired with wide-flare shimmering satin pants and a neck choker scarf.",
+      "careInstructions": [
+        "Dry clean only to protect pearl beads and delicate embroidery",
+        "Cool iron on reverse with pressing cloth"
+      ],
+      "features": [
+        "Delicate Handcrafted Pearl Droplet Fringe on Hemline",
+        "High-Lustre Fluid Satin Sharara with Dramatic Flare",
+        "Matching Choker-Style Sheer Scarf",
+        "Concealed Side Zip for Flawless Tailored Fit"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "sea green sharara",
+        "pearl kurti",
+        "sangeet outfit",
+        "sleeveless kurti",
+        "nandita fashion"
+      ],
+      "createdAt": "2026-08-23T00:00:00Z"
+    },
+    {
+      "id": "prod-nandita-03",
+      "name": "Dusty Rose Mauve Hand-Embroidered Peplum Palazzo Set",
+      "slug": "dusty-rose-mauve-hand-embroidered-peplum-palazzo-set",
+      "sku": "NF-DRS-PEPL-03",
+      "category": "Kurta Sets",
+      "subcategory": "Co-ord Sets",
+      "collections": [
+        "Festive Chanderi & Zari",
+        "Luxe & Festive"
+      ],
+      "mrp": 4499,
+      "sellingPrice": 2799,
+      "costPrice": 1200,
+      "discountPercent": 38,
+      "rating": 4.8,
+      "reviewCount": 52,
+      "images": [
+        {
+          "id": "img-nf-3-1",
+          "url": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Dusty Rose Mauve Peplum Kurti with Bead Tassels and Wide Palazzo",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-nf-3-2",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Needlework and droplet fringe detail on peplum hem",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-nf-3-m",
+          "sku": "NF-DRS-03-M",
+          "color": "Dusty Rose Mauve",
+          "colorHex": "#B57C8A",
+          "size": "M",
+          "stock": 14
+        },
+        {
+          "id": "v-nf-3-l",
+          "sku": "NF-DRS-03-L",
+          "color": "Dusty Rose Mauve",
+          "colorHex": "#B57C8A",
+          "size": "L",
+          "stock": 18
+        },
+        {
+          "id": "v-nf-3-xl",
+          "sku": "NF-DRS-03-XL",
+          "color": "Dusty Rose Mauve",
+          "colorHex": "#B57C8A",
+          "size": "XL",
+          "stock": 15
+        },
+        {
+          "id": "v-nf-3-xxl",
+          "sku": "NF-DRS-03-XXL",
+          "color": "Dusty Rose Mauve",
+          "colorHex": "#B57C8A",
+          "size": "XXL",
+          "stock": 9
+        }
+      ],
+      "fabric": "Fine Chiffon Silk with Soft Cotton Lining",
+      "work": "Intricate Floral Needlework, Bead Droplet Fringe & Scallop Hem",
+      "pattern": "Intricate Floral Embroidered Bodice",
+      "sleeve": "Sleeveless",
+      "neckType": "Scoop Neck with Matching Soft Draped Scarf",
+      "occasion": "Cocktail Parties, Festive Dinners & Receptions",
+      "fit": "Flattering Peplum Silhouette with Wide-Leg Flared Palazzo",
+      "length": "Peplum Top (26\") / Palazzo (40\")",
+      "bottomType": "Flared Silk Palazzo Pants",
+      "dupattaIncluded": true,
+      "description": "Designed for regal modern soirees, this dusty rose mauve set showcases a sleeveless peplum tunic adorned with multi-hued floral embroidery and hanging bead tassels, complemented by voluminous palazzo pants in heavy silk drape.",
+      "careInstructions": [
+        "Dry clean only",
+        "Keep wrapped in muslin cloth",
+        "Low heat steam iron"
+      ],
+      "features": [
+        "Elegantly Flared Peplum Hem with Bead Tassels",
+        "Rich Multi-Toned Embroidery on Bodice",
+        "Full Flare Silk Palazzo with Deep Pleats",
+        "Matching Embroidered Border Scarf"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "dusty rose peplum",
+        "mauve palazzo set",
+        "designer ethnic",
+        "nandita fashion"
+      ],
+      "createdAt": "2026-08-23T00:00:00Z"
+    },
+    {
+      "id": "prod-nandita-04",
+      "name": "Ivory & Pink Floral Jaipuri Hand Block Print Straight Kurta Set",
+      "slug": "ivory-pink-floral-jaipuri-hand-block-print-straight-kurta-set",
+      "sku": "NF-IVP-JAIP-04",
+      "category": "Kurtas & Kurtis",
+      "subcategory": "3-Piece Festive Sets",
+      "collections": [
+        "Pure Cotton Comfort",
+        "Everyday Elegance"
+      ],
+      "mrp": 2999,
+      "sellingPrice": 1899,
+      "costPrice": 750,
+      "discountPercent": 37,
+      "rating": 4.9,
+      "reviewCount": 110,
+      "images": [
+        {
+          "id": "img-nf-4-1",
+          "url": "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80",
+          "altText": "Ivory & Pink Floral Jaipuri Hand Block Print Kurta Set with Mulmul Dupatta",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-nf-4-2",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "V-neck placket with fine gotta patti and printed floral border",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-nf-4-m",
+          "sku": "NF-IVP-04-M",
+          "color": "Ivory & Pink",
+          "colorHex": "#F7E7E9",
+          "size": "M",
+          "stock": 20
+        },
+        {
+          "id": "v-nf-4-l",
+          "sku": "NF-IVP-04-L",
+          "color": "Ivory & Pink",
+          "colorHex": "#F7E7E9",
+          "size": "L",
+          "stock": 24
+        },
+        {
+          "id": "v-nf-4-xl",
+          "sku": "NF-IVP-04-XL",
+          "color": "Ivory & Pink",
+          "colorHex": "#F7E7E9",
+          "size": "XL",
+          "stock": 18
+        },
+        {
+          "id": "v-nf-4-xxl",
+          "sku": "NF-IVP-04-XXL",
+          "color": "Ivory & Pink",
+          "colorHex": "#F7E7E9",
+          "size": "XXL",
+          "stock": 12
+        }
+      ],
+      "fabric": "100% 60s Count Pure Cambric Cotton & Mulmul Dupatta",
+      "work": "Traditional Sanganeri Hand Block Print with Gota Patti V-Neck Placket",
+      "pattern": "Hand Block Floral Buta & Vine Border",
+      "sleeve": "3/4th Sleeve with Printed Border",
+      "neckType": "Notched V-Neck Placket with Pleated Front Detailing",
+      "occasion": "Day Festive, Pooja Rituals & Everyday Sophistication",
+      "fit": "Straight Relaxed Fit Kurti with Ankle Cigarette Pants",
+      "length": "Calf Length Kurti (45\") / Pant (37\")",
+      "bottomType": "Matching Floral Printed Tapered Pants",
+      "dupattaIncluded": true,
+      "description": "An authentic Sanganeri hand block printed 3-piece kurta set from Nandita Fashion in pure 60s cambric cotton. Decorated with delicate pink floral butas, a stitched pintuck V-yoke, coordinated printed trousers, and a soft 2.5m mulmul dupatta.",
+      "careInstructions": [
+        "Machine wash gentle or hand wash in cold water",
+        "Wash with mild liquid detergent",
+        "Dry in shade to preserve natural vegetable dyes",
+        "Warm iron"
+      ],
+      "features": [
+        "100% Breathable 60s Combed Cotton",
+        "Authentic Artisanal Jaipuri Block Print",
+        "Pintuck V-Neck Placket with Delicate Border Trims",
+        "Featherweight 2.5m Mulmul Dupatta Included"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "jaipuri cotton kurti",
+        "block print",
+        "ivory pink kurti",
+        "cotton kurta set",
+        "nandita fashion"
+      ],
+      "createdAt": "2026-08-23T00:00:00Z"
+    },
+    {
+      "id": "prod-nandita-05",
+      "name": "Royal Crimson Red Floral Neck Embroidered Kurti Set with Organza Dupatta",
+      "slug": "royal-crimson-red-floral-neck-embroidered-kurti-set",
+      "sku": "NF-RED-EMBR-05",
+      "category": "Kurta Sets",
+      "subcategory": "3-Piece Festive Sets",
+      "collections": [
+        "Festive Chanderi & Zari",
+        "Luxe & Festive"
+      ],
+      "mrp": 3799,
+      "sellingPrice": 2399,
+      "costPrice": 980,
+      "discountPercent": 37,
+      "rating": 5,
+      "reviewCount": 148,
+      "images": [
+        {
+          "id": "img-nf-5-1",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Royal Crimson Red Kurti Set with Intricate Threadwork Yoke and Sheer Dupatta",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-nf-5-2",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Mirror work floral neckline and tassel trims close-up",
+          "type": "detail"
+        },
+        {
+          "id": "img-nf-5-3",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Side pocket with floral resham embroidery sprig",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-nf-5-m",
+          "sku": "NF-RED-05-M",
+          "color": "Royal Crimson Red",
+          "colorHex": "#9B111E",
+          "size": "M",
+          "stock": 18
+        },
+        {
+          "id": "v-nf-5-l",
+          "sku": "NF-RED-05-L",
+          "color": "Royal Crimson Red",
+          "colorHex": "#9B111E",
+          "size": "L",
+          "stock": 22
+        },
+        {
+          "id": "v-nf-5-xl",
+          "sku": "NF-RED-05-XL",
+          "color": "Royal Crimson Red",
+          "colorHex": "#9B111E",
+          "size": "XL",
+          "stock": 16
+        },
+        {
+          "id": "v-nf-5-xxl",
+          "sku": "NF-RED-05-XXL",
+          "color": "Royal Crimson Red",
+          "colorHex": "#9B111E",
+          "size": "XXL",
+          "stock": 11
+        }
+      ],
+      "fabric": "Pure Chanderi Cotton Silk with Sheer Organza Dupatta",
+      "work": "Artisanal Floral Thread Work, Potli Buttons, Mirror Yoke & Pocket Sprigs",
+      "pattern": "Solid Red with Embroidered Floral Neck & Booti Dupatta",
+      "sleeve": "3/4th Sleeve with Embroidered Cuffs",
+      "neckType": "Notched V-Neck with Hanging Fabric Tassels",
+      "occasion": "Karwa Chauth, Diwali, Navratri & Festive Weddings",
+      "fit": "Straight Cut with Side Slits & Deep Pockets",
+      "length": "Calf Length (46\") / Pant (38\")",
+      "bottomType": "Tailored Red Cigarette Pants with Hem Detailing",
+      "dupattaIncluded": true,
+      "description": "Radiate celebratory splendor with Nandita Fashion’s iconic royal crimson red kurta set. Crafted from rich Chanderi cotton silk, it boasts a densely embroidered floral neckline highlighted with real mirror work, side functional pockets with embroidered bouquets, and a sheer organza booti dupatta.",
+      "careInstructions": [
+        "Dry clean first time, gentle cold wash thereafter",
+        "Iron inside out on medium heat"
+      ],
+      "features": [
+        "High-Density Kashmiri Style Neck Embroidery with Mirror Accents",
+        "Functional Side In-Seam Pockets with Floral Detailing",
+        "Matching Tapered Pants with Elasticated Back",
+        "Sheer Organza Dupatta with Delicate Embroidered Florets"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "crimson red kurti",
+        "karwa chauth outfit",
+        "red kurta set",
+        "organza dupatta",
+        "nandita fashion"
+      ],
+      "createdAt": "2026-08-23T00:00:00Z"
+    },
+    {
+      "id": "prod-nandita-06",
+      "name": "Ivory & Rose Ombré Resham Floral Flared Anarkali Kurta Set",
+      "slug": "ivory-rose-ombre-resham-floral-flared-anarkali-kurta-set",
+      "sku": "NF-OMB-ANAR-06",
+      "category": "Kurta Sets",
+      "subcategory": "Anarkali Suits",
+      "collections": [
+        "Festive Chanderi & Zari",
+        "Luxe & Festive"
+      ],
+      "mrp": 4999,
+      "sellingPrice": 3199,
+      "costPrice": 1350,
+      "discountPercent": 36,
+      "rating": 5,
+      "reviewCount": 92,
+      "images": [
+        {
+          "id": "img-nf-6-1",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Ivory to Rose Pink Ombré Flared Anarkali with White Resham Cutwork",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-nf-6-2",
+          "url": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+          "altText": "White threadwork floral applique and scalloped hem lace close-up",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-nf-6-m",
+          "sku": "NF-OMB-06-M",
+          "color": "Ivory & Rose Pink",
+          "colorHex": "#F3C5CE",
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "id": "v-nf-6-l",
+          "sku": "NF-OMB-06-L",
+          "color": "Ivory & Rose Pink",
+          "colorHex": "#F3C5CE",
+          "size": "L",
+          "stock": 15
+        },
+        {
+          "id": "v-nf-6-xl",
+          "sku": "NF-OMB-06-XL",
+          "color": "Ivory & Rose Pink",
+          "colorHex": "#F3C5CE",
+          "size": "XL",
+          "stock": 12
+        },
+        {
+          "id": "v-nf-6-xxl",
+          "sku": "NF-OMB-06-XXL",
+          "color": "Ivory & Rose Pink",
+          "colorHex": "#F3C5CE",
+          "size": "XXL",
+          "stock": 8
+        }
+      ],
+      "fabric": "Mulmul Silk Blend with Cutwork Scalloped Lace Hem",
+      "work": "Monochrome White Resham Thread Embroidery on Dip-Dyed Ombré Flare",
+      "pattern": "Dip-Dye Ombré with Large Floral Applique Motifs",
+      "sleeve": "3/4th Sleeve with Resham Cuffs",
+      "neckType": "V-Neck with Fine Zari Piping",
+      "occasion": "Engagement, Day Weddings & High Tea Celebrations",
+      "fit": "Flared Kalidar Anarkali Silhouette with Slim Pants",
+      "length": "Anarkali Length (48\") / Pant (38\")",
+      "bottomType": "Ivory Tapered Cigarette Trousers",
+      "dupattaIncluded": true,
+      "description": "Epitomizing pure romance, this Nandita Fashion Anarkali suit transitions from an ivory silk bodice to a soft baby rose ombré flare. Embellished with delicate white resham embroidery and an exquisite scalloped cutwork lace border.",
+      "careInstructions": [
+        "Dry clean recommended",
+        "Steam iron only on low heat"
+      ],
+      "features": [
+        "Ombré Dip-Dyed Ivory to Rose Pink Gradation",
+        "Oversized Floral White Resham Embroidery Motifs",
+        "Cutwork Scalloped Lace Border on Kurta & Dupatta",
+        "Full 3.5m Flared Kalidar Twirl Volume"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "ombre anarkali",
+        "rose pink suit",
+        "resham embroidery",
+        "wedding guest",
+        "nandita fashion"
+      ],
+      "createdAt": "2026-08-23T00:00:00Z"
+    },
+    {
+      "id": "prod-nandita-07",
+      "name": "Sage Olive Green Floral Yoke Embroidered Kurti Set with Organza Dupatta",
+      "slug": "sage-olive-green-floral-yoke-embroidered-kurti-set",
+      "sku": "NF-SGE-EMBR-07",
+      "category": "Kurta Sets",
+      "subcategory": "3-Piece Festive Sets",
+      "collections": [
+        "Festive Chanderi & Zari",
+        "Pure Cotton Comfort"
+      ],
+      "mrp": 3699,
+      "sellingPrice": 2299,
+      "costPrice": 950,
+      "discountPercent": 38,
+      "rating": 4.9,
+      "reviewCount": 78,
+      "images": [
+        {
+          "id": "img-nf-7-1",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Sage Olive Green Embroidered Kurti with Pink Floral Yoke & Organza Dupatta",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-nf-7-2",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Pink and gold floral neck embroidery with hanging tassels",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-nf-7-m",
+          "sku": "NF-SGE-07-M",
+          "color": "Sage Olive Green",
+          "colorHex": "#708238",
+          "size": "M",
+          "stock": 16
+        },
+        {
+          "id": "v-nf-7-l",
+          "sku": "NF-SGE-07-L",
+          "color": "Sage Olive Green",
+          "colorHex": "#708238",
+          "size": "L",
+          "stock": 20
+        },
+        {
+          "id": "v-nf-7-xl",
+          "sku": "NF-SGE-07-XL",
+          "color": "Sage Olive Green",
+          "colorHex": "#708238",
+          "size": "XL",
+          "stock": 15
+        },
+        {
+          "id": "v-nf-7-xxl",
+          "sku": "NF-SGE-07-XXL",
+          "color": "Sage Olive Green",
+          "colorHex": "#708238",
+          "size": "XXL",
+          "stock": 10
+        }
+      ],
+      "fabric": "Breathable Modal Chanderi Silk with Sheer Dupatta",
+      "work": "Pink & Gold Resham Flower Embroidery, Neckline Tassels & Pocket Embroidery",
+      "pattern": "Solid Olive with Contrast Pink Floral Yoke",
+      "sleeve": "3/4th Sleeve with Embroidered Border",
+      "neckType": "Notched V-Neck with Dainty Fabric Tassels",
+      "occasion": "Mehendi Ceremony, Festive Gatherings & Puja Wear",
+      "fit": "Straight Fit with Side Pockets & Tailored Cigarette Trousers",
+      "length": "Calf Length (46\") / Pant (38\")",
+      "bottomType": "Coordinated Olive Silk Cigarette Pants",
+      "dupattaIncluded": true,
+      "description": "An earthy yet festive sage olive green 3-piece kurta set from Nandita Fashion. Tailored from soft modal Chanderi silk with contrast pink floral embroidery over the neckline and pocket, finished with delicate hanging tassels and an all-over booti dupatta.",
+      "careInstructions": [
+        "Dry clean or mild hand wash in cold water",
+        "Medium iron on reverse side"
+      ],
+      "features": [
+        "Earthy Sage Olive Palette with Contrast Pink Embroidery",
+        "Handmade Dainty Fabric Tassels on V-Neck Placket",
+        "Functional In-Seam Pockets on Kurti with Floral Sprigs",
+        "Lightweight Breathable Organza Dupatta with Embroidered Flowers"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "sage olive kurti",
+        "mehendi outfit",
+        "green kurta set",
+        "modal chanderi",
+        "nandita fashion"
+      ],
+      "createdAt": "2026-08-23T00:00:00Z"
+    },
+    {
+      "id": "prod-1",
+      "name": "Dusty Rose Embroidered Cotton Co-ord Set",
+      "slug": "dusty-rose-embroidered-cotton-co-ord-set",
+      "sku": "VDY-DRE-01",
+      "category": "Kurta Sets",
+      "subcategory": "Kurti with Pant",
+      "collections": [
+        "Everyday Elegance",
+        "Office & Workwear Edit",
+        "Pure Cotton Comfort"
+      ],
+      "mrp": 2499,
+      "sellingPrice": 1599,
+      "costPrice": 780,
+      "discountPercent": 36,
+      "rating": 4.8,
+      "reviewCount": 142,
+      "images": [
+        {
+          "id": "img-1-1",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Dusty Rose Embroidered Kurta Set Front View",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-1-2",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Detailed Embroidery Neckline Close-up",
+          "type": "detail"
+        },
+        {
+          "id": "img-1-3",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Back silhouette and pant embroidery",
+          "type": "back"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-1-m",
+          "sku": "VDY-DRE-01-M",
+          "color": "Dusty Rose",
+          "colorHex": "#C98C97",
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "id": "v-1-l",
+          "sku": "VDY-DRE-01-L",
+          "color": "Dusty Rose",
+          "colorHex": "#C98C97",
+          "size": "L",
+          "stock": 18
+        },
+        {
+          "id": "v-1-xl",
+          "sku": "VDY-DRE-01-XL",
+          "color": "Dusty Rose",
+          "colorHex": "#C98C97",
+          "size": "XL",
+          "stock": 15
+        },
+        {
+          "id": "v-1-2xl",
+          "sku": "VDY-DRE-01-2XL",
+          "color": "Dusty Rose",
+          "colorHex": "#C98C97",
+          "size": "2XL",
+          "stock": 8
+        },
+        {
+          "id": "v-1-3xl",
+          "sku": "VDY-DRE-01-3XL",
+          "color": "Dusty Rose",
+          "colorHex": "#C98C97",
+          "size": "3XL",
+          "stock": 4
+        },
+        {
+          "id": "v-1-4xl",
+          "sku": "VDY-DRE-01-4XL",
+          "color": "Dusty Rose",
+          "colorHex": "#C98C97",
+          "size": "4XL",
+          "stock": 3
+        },
+        {
+          "id": "v-1-5xl",
+          "sku": "VDY-DRE-01-5XL",
+          "color": "Dusty Rose",
+          "colorHex": "#C98C97",
+          "size": "5XL",
+          "stock": 2
+        }
+      ],
+      "fabric": "Cotton",
+      "work": "Neck Embroidery",
+      "pattern": "Solid",
+      "sleeve": "3/4th Sleeve",
+      "neckType": "V-Neck",
+      "occasion": "Office Wear",
+      "fit": "Regular Fit",
+      "length": "Calf Length",
+      "bottomType": "Straight Pant",
+      "dupattaIncluded": false,
+      "description": "An ethereal dusty rose co-ord kurta set tailored from superior 60s combed cotton. Features exquisite thread work around the notched V-neckline and comes paired with coordinated straight-cut trousers finished with side hem embroidery.",
+      "careInstructions": [
+        "Hand wash or gentle machine wash in cold water",
+        "Wash dark colors separately",
+        "Do not bleach",
+        "Warm iron on reverse side"
+      ],
+      "features": [
+        "100% Pure Breathable Cotton",
+        "Intricate Needlework on Neck & Hem",
+        "Concealed Side Pockets in Pant",
+        "Elasticated Waistband with Drawstring"
+      ],
+      "isBestseller": true,
+      "isNewArrival": false,
+      "isTrending": true,
+      "tags": [
+        "cotton kurti",
+        "office wear",
+        "dusty rose",
+        "co-ord set",
+        "embroidered kurti"
+      ],
+      "createdAt": "2026-08-01T00:00:00Z"
+    },
+    {
+      "id": "prod-2",
+      "name": "Sage Green Chikankari Straight Kurta Set with Chanderi Dupatta",
+      "slug": "sage-green-chikankari-straight-kurta-set",
+      "sku": "VDY-SGC-02",
+      "category": "Kurta Sets",
+      "subcategory": "3-Piece Festive Sets",
+      "collections": [
+        "Festive Chanderi & Zari",
+        "Pure Cotton Comfort"
+      ],
+      "mrp": 3299,
+      "sellingPrice": 2199,
+      "costPrice": 990,
+      "discountPercent": 33,
+      "rating": 4.9,
+      "reviewCount": 98,
+      "images": [
+        {
+          "id": "img-2-1",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Sage Green Chikankari Set Front",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-2-2",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Chanderi Dupatta with Gota Patti",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-2-m",
+          "sku": "VDY-SGC-02-M",
+          "color": "Sage Green",
+          "colorHex": "#87A991",
+          "size": "M",
+          "stock": 10
+        },
+        {
+          "id": "v-2-l",
+          "sku": "VDY-SGC-02-L",
+          "color": "Sage Green",
+          "colorHex": "#87A991",
+          "size": "L",
+          "stock": 14
+        },
+        {
+          "id": "v-2-xl",
+          "sku": "VDY-SGC-02-XL",
+          "color": "Sage Green",
+          "colorHex": "#87A991",
+          "size": "XL",
+          "stock": 11
+        },
+        {
+          "id": "v-2-2xl",
+          "sku": "VDY-SGC-02-2XL",
+          "color": "Sage Green",
+          "colorHex": "#87A991",
+          "size": "2XL",
+          "stock": 6
+        },
+        {
+          "id": "v-2-3xl",
+          "sku": "VDY-SGC-02-3XL",
+          "color": "Sage Green",
+          "colorHex": "#87A991",
+          "size": "3XL",
+          "stock": 5
+        },
+        {
+          "id": "v-2-4xl",
+          "sku": "VDY-SGC-02-4XL",
+          "color": "Sage Green",
+          "colorHex": "#87A991",
+          "size": "4XL",
+          "stock": 2
+        }
+      ],
+      "fabric": "Mulmul",
+      "work": "Chikankari",
+      "pattern": "Floral",
+      "sleeve": "3/4th Sleeve",
+      "neckType": "Round Neck",
+      "occasion": "Festive",
+      "fit": "Straight",
+      "length": "Calf Length",
+      "bottomType": "Straight Pant",
+      "dupattaIncluded": true,
+      "description": "Immerse in classic Lucknowi craftsmanship with this soothing sage green Chikankari 3-piece suit set. Decorated with delicate floral motifs and paired with a radiant woven Chanderi zari border dupatta.",
+      "careInstructions": [
+        "Dry clean recommended for first wash",
+        "Gentle hand wash inside out",
+        "Flat dry in shade"
+      ],
+      "features": [
+        "Authentic Chikankari Hand Stitching",
+        "Featherlight Pure Mulmul Fabric",
+        "Includes 2.4m Woven Chanderi Dupatta",
+        "Semi-elasticated comfort trousers"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "chikankari",
+        "sage green",
+        "kurta set",
+        "chanderi dupatta",
+        "festive wear"
+      ],
+      "createdAt": "2026-08-10T00:00:00Z"
+    },
+    {
+      "id": "prod-3",
+      "name": "Mustard Yellow Hand-Block Printed A-Line Kurti",
+      "slug": "mustard-yellow-hand-block-printed-a-line-kurti",
+      "sku": "VDY-MYB-03",
+      "category": "Kurtis",
+      "subcategory": "A-Line Kurtis",
+      "collections": [
+        "Pure Cotton Comfort",
+        "Budget Delights Under ₹999"
+      ],
+      "mrp": 1499,
+      "sellingPrice": 899,
+      "costPrice": 380,
+      "discountPercent": 40,
+      "rating": 4.7,
+      "reviewCount": 215,
+      "images": [
+        {
+          "id": "img-3-1",
+          "url": "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80",
+          "altText": "Mustard Yellow Hand Block Kurti Front Flare",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-3-2",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Sanganeri hand-block print & placket details",
+          "type": "detail"
+        },
+        {
+          "id": "img-3-3",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Side angle drape & sleeve finish",
+          "type": "side"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-3-s",
+          "sku": "VDY-MYB-03-S",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "S",
+          "stock": 15
+        },
+        {
+          "id": "v-3-m",
+          "sku": "VDY-MYB-03-M",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "M",
+          "stock": 22
+        },
+        {
+          "id": "v-3-l",
+          "sku": "VDY-MYB-03-L",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "L",
+          "stock": 30
+        },
+        {
+          "id": "v-3-xl",
+          "sku": "VDY-MYB-03-XL",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "XL",
+          "stock": 20
+        },
+        {
+          "id": "v-3-2xl",
+          "sku": "VDY-MYB-03-2XL",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "2XL",
+          "stock": 12
+        },
+        {
+          "id": "v-3-3xl",
+          "sku": "VDY-MYB-03-3XL",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "3XL",
+          "stock": 8
+        },
+        {
+          "id": "v-3-4xl",
+          "sku": "VDY-MYB-03-4XL",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "4XL",
+          "stock": 5
+        },
+        {
+          "id": "v-3-5xl",
+          "sku": "VDY-MYB-03-5XL",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "5XL",
+          "stock": 4
+        }
+      ],
+      "fabric": "Cotton",
+      "work": "Hand Block Print",
+      "pattern": "Geometric",
+      "sleeve": "3/4th Sleeve",
+      "neckType": "Mandarin Collar",
+      "occasion": "Casual",
+      "fit": "A-Line",
+      "length": "Calf Length",
+      "bottomType": "None",
+      "dupattaIncluded": false,
+      "description": "Celebrate authentic Sanganeri wooden block motifs on a sunny mustard canvas. The A-line silhouette with wooden button detailing on the placket offers day-long ease and style.",
+      "careInstructions": [
+        "Gentle machine wash with mild detergent",
+        "Wash with similar colors",
+        "Dry in shade"
+      ],
+      "features": [
+        "Natural Azo-free Vegetable Dyes",
+        "Wooden Buttons on Front Placket",
+        "Flattering A-Line Cut for All Body Types",
+        "High Quality 60s Cambric Cotton"
+      ],
+      "isBestseller": true,
+      "isNewArrival": false,
+      "isTrending": false,
+      "tags": [
+        "mustard kurti",
+        "hand block",
+        "daily wear",
+        "under 999",
+        "plus size kurti"
+      ],
+      "createdAt": "2026-07-15T00:00:00Z"
+    },
+    {
+      "id": "prod-4",
+      "name": "Deep Wine Zari Embroidered Anarkali Kurta Set with Organza Dupatta",
+      "slug": "deep-wine-zari-embroidered-anarkali-kurta-set",
+      "sku": "VDY-DWZ-04",
+      "category": "Kurta Sets",
+      "subcategory": "Anarkali Sets",
+      "collections": [
+        "Festive Chanderi & Zari"
+      ],
+      "mrp": 4599,
+      "sellingPrice": 2899,
+      "costPrice": 1350,
+      "discountPercent": 37,
+      "rating": 4.95,
+      "reviewCount": 76,
+      "images": [
+        {
+          "id": "img-4-1",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Deep Wine Anarkali Front Flare",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-4-2",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Zari Yoke and Scalloped Organza Border",
+          "type": "detail"
+        },
+        {
+          "id": "img-4-3",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Back Ghera and tassels",
+          "type": "back"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-4-m",
+          "sku": "VDY-DWZ-04-M",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "M",
+          "stock": 6
+        },
+        {
+          "id": "v-4-l",
+          "sku": "VDY-DWZ-04-L",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "L",
+          "stock": 12
+        },
+        {
+          "id": "v-4-xl",
+          "sku": "VDY-DWZ-04-XL",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "XL",
+          "stock": 9
+        },
+        {
+          "id": "v-4-2xl",
+          "sku": "VDY-DWZ-04-2XL",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "2XL",
+          "stock": 5
+        },
+        {
+          "id": "v-4-3xl",
+          "sku": "VDY-DWZ-04-3XL",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "3XL",
+          "stock": 3
+        },
+        {
+          "id": "v-4-4xl",
+          "sku": "VDY-DWZ-04-4XL",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "4XL",
+          "stock": 0
+        }
+      ],
+      "fabric": "Chanderi",
+      "work": "Zari Work",
+      "pattern": "Solid",
+      "sleeve": "Full Sleeve",
+      "neckType": "Sweetheart",
+      "occasion": "Wedding",
+      "fit": "Anarkali",
+      "length": "Ankle Length",
+      "bottomType": "Straight Pant",
+      "dupattaIncluded": true,
+      "description": "A regal royal wine 32-kali Anarkali set woven in premium Chanderi Silk with gleaming gold Zari craftsmanship across the neckline and cuffs. Finished with a scalloped organza dupatta with golden tassels.",
+      "careInstructions": [
+        "Dry clean only",
+        "Store in muslin wrap to preserve zari sheen",
+        "Iron on low setting"
+      ],
+      "features": [
+        "32-Kali Grand Ghera Flare (3.8 Meters)",
+        "Rich Gold Zari Yoke Work",
+        "Scalloped Cutwork Organza Dupatta",
+        "Soft Cotton Voile Inner Lining"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "wine anarkali",
+        "wedding kurti",
+        "zari work",
+        "organza dupatta",
+        "festive special"
+      ],
+      "createdAt": "2026-08-15T00:00:00Z"
+    },
+    {
+      "id": "prod-5",
+      "name": "Indigo Blue Hand-Block Tiered Ethnic Maxi Dress",
+      "slug": "indigo-blue-hand-block-tiered-ethnic-maxi-dress",
+      "sku": "VDY-IBD-05",
+      "category": "Ethnic Dresses",
+      "subcategory": "Tiered Maxi Dresses",
+      "collections": [
+        "Pure Cotton Comfort",
+        "Everyday Elegance"
+      ],
+      "mrp": 2299,
+      "sellingPrice": 1399,
+      "costPrice": 620,
+      "discountPercent": 39,
+      "rating": 4.85,
+      "reviewCount": 164,
+      "images": [
+        {
+          "id": "img-5-1",
+          "url": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80",
+          "altText": "Indigo Blue Tiered Maxi Dress Front Flare",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-5-2",
+          "url": "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80",
+          "altText": "Tiered flare movement and waist tie",
+          "type": "detail"
+        },
+        {
+          "id": "img-5-3",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Indigo Block print close-up",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-5-m",
+          "sku": "VDY-IBD-05-M",
+          "color": "Indigo Blue",
+          "colorHex": "#2E4057",
+          "size": "M",
+          "stock": 15
+        },
+        {
+          "id": "v-5-l",
+          "sku": "VDY-IBD-05-L",
+          "color": "Indigo Blue",
+          "colorHex": "#2E4057",
+          "size": "L",
+          "stock": 20
+        },
+        {
+          "id": "v-5-xl",
+          "sku": "VDY-IBD-05-XL",
+          "color": "Indigo Blue",
+          "colorHex": "#2E4057",
+          "size": "XL",
+          "stock": 16
+        },
+        {
+          "id": "v-5-2xl",
+          "sku": "VDY-IBD-05-2XL",
+          "color": "Indigo Blue",
+          "colorHex": "#2E4057",
+          "size": "2XL",
+          "stock": 10
+        },
+        {
+          "id": "v-5-3xl",
+          "sku": "VDY-IBD-05-3XL",
+          "color": "Indigo Blue",
+          "colorHex": "#2E4057",
+          "size": "3XL",
+          "stock": 8
+        },
+        {
+          "id": "v-5-4xl",
+          "sku": "VDY-IBD-05-4XL",
+          "color": "Indigo Blue",
+          "colorHex": "#2E4057",
+          "size": "4XL",
+          "stock": 4
+        },
+        {
+          "id": "v-5-5xl",
+          "sku": "VDY-IBD-05-5XL",
+          "color": "Indigo Blue",
+          "colorHex": "#2E4057",
+          "size": "5XL",
+          "stock": 2
+        }
+      ],
+      "fabric": "Cotton",
+      "work": "Hand Block Print",
+      "pattern": "Floral",
+      "sleeve": "3/4th Sleeve",
+      "neckType": "Round Neck",
+      "occasion": "Casual",
+      "fit": "Flared",
+      "length": "Ankle Length",
+      "bottomType": "None",
+      "dupattaIncluded": false,
+      "description": "An iconic Bagru-inspired indigo blue 3-tier maxi dress with adjustable waist tassels. Crafted from 100% natural cotton for carefree summer holidays, brunch dates, and daily bohemian flair.",
+      "careInstructions": [
+        "Machine wash cold on delicate cycle",
+        "Wash with dark indigo clothes",
+        "Iron damp"
+      ],
+      "features": [
+        "Triple Ruffled Voluminous Tiered Hem",
+        "Adjustable Fabric Tassel Drawstring at Waist",
+        "Twin Functional Concealed Deep Pockets",
+        "Natural Dabu Indigo Block Printing"
+      ],
+      "isBestseller": true,
+      "isNewArrival": false,
+      "isTrending": true,
+      "tags": [
+        "indigo dress",
+        "maxi dress",
+        "plus size dress",
+        "boho ethnic",
+        "cotton tiered dress"
+      ],
+      "createdAt": "2026-07-28T00:00:00Z"
+    },
+    {
+      "id": "prod-6",
+      "name": "Ivory & Gold Gotta Patti Kurta Palazzo Set with Kota Doria Dupatta",
+      "slug": "ivory-gold-gotta-patti-kurta-palazzo-set",
+      "sku": "VDY-IGG-06",
+      "category": "Kurta Sets",
+      "subcategory": "Kurti with Pant",
+      "collections": [
+        "Festive Chanderi & Zari"
+      ],
+      "mrp": 3899,
+      "sellingPrice": 2499,
+      "costPrice": 1100,
+      "discountPercent": 36,
+      "rating": 4.9,
+      "reviewCount": 112,
+      "images": [
+        {
+          "id": "img-6-1",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Ivory Gold Kurta Palazzo Set",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-6-2",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Gotta Patti lace detailing",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-6-m",
+          "sku": "VDY-IGG-06-M",
+          "color": "Ivory White",
+          "colorHex": "#FDFBF7",
+          "size": "M",
+          "stock": 8
+        },
+        {
+          "id": "v-6-l",
+          "sku": "VDY-IGG-06-L",
+          "color": "Ivory White",
+          "colorHex": "#FDFBF7",
+          "size": "L",
+          "stock": 12
+        },
+        {
+          "id": "v-6-xl",
+          "sku": "VDY-IGG-06-XL",
+          "color": "Ivory White",
+          "colorHex": "#FDFBF7",
+          "size": "XL",
+          "stock": 10
+        },
+        {
+          "id": "v-6-2xl",
+          "sku": "VDY-IGG-06-2XL",
+          "color": "Ivory White",
+          "colorHex": "#FDFBF7",
+          "size": "2XL",
+          "stock": 5
+        },
+        {
+          "id": "v-6-3xl",
+          "sku": "VDY-IGG-06-3XL",
+          "color": "Ivory White",
+          "colorHex": "#FDFBF7",
+          "size": "3XL",
+          "stock": 3
+        }
+      ],
+      "fabric": "Rayon",
+      "work": "Gotta Patti",
+      "pattern": "Solid",
+      "sleeve": "3/4th Sleeve",
+      "neckType": "Boat Neck",
+      "occasion": "Festive",
+      "fit": "Straight",
+      "length": "Calf Length",
+      "bottomType": "Palazzo",
+      "dupattaIncluded": true,
+      "description": "Pristine ivory silhouette highlighted by authentic Rajasthani Gotta Patti applique work along the neck, sleeves, and palazzo borders. Accompanied by a featherweight Kota Doria dupatta with gold foil motifs.",
+      "careInstructions": [
+        "Dry clean or gentle hand wash with mild wool/silk liquid",
+        "Iron on medium temperature with protective cloth"
+      ],
+      "features": [
+        "Signature Rajasthani Gotta Patti Work",
+        "Flared Wide-Leg Palazzo Pants",
+        "Kota Doria Gold-Woven Dupatta (2.3m)",
+        "Rich Heavy Viscose Rayon Fabric"
+      ],
+      "isBestseller": false,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "ivory kurti",
+        "gotta patti",
+        "festive set",
+        "palazzo suit",
+        "pooja outfit"
+      ],
+      "createdAt": "2026-08-18T00:00:00Z"
+    },
+    {
+      "id": "prod-7",
+      "name": "Coral Peach Embroidered Casual Short Kurti",
+      "slug": "coral-peach-embroidered-casual-short-kurti",
+      "sku": "VDY-CPS-07",
+      "category": "Kurtis",
+      "subcategory": "Short Kurtis",
+      "collections": [
+        "Budget Delights Under ₹999",
+        "Office & Workwear Edit"
+      ],
+      "mrp": 1299,
+      "sellingPrice": 699,
+      "costPrice": 290,
+      "discountPercent": 46,
+      "rating": 4.65,
+      "reviewCount": 188,
+      "images": [
+        {
+          "id": "img-7-1",
+          "url": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+          "altText": "Coral Peach Short Kurti",
+          "isPrimary": true,
+          "type": "front"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-7-s",
+          "sku": "VDY-CPS-07-S",
+          "color": "Coral Peach",
+          "colorHex": "#F78888",
+          "size": "S",
+          "stock": 20
+        },
+        {
+          "id": "v-7-m",
+          "sku": "VDY-CPS-07-M",
+          "color": "Coral Peach",
+          "colorHex": "#F78888",
+          "size": "M",
+          "stock": 25
+        },
+        {
+          "id": "v-7-l",
+          "sku": "VDY-CPS-07-L",
+          "color": "Coral Peach",
+          "colorHex": "#F78888",
+          "size": "L",
+          "stock": 35
+        },
+        {
+          "id": "v-7-xl",
+          "sku": "VDY-CPS-07-XL",
+          "color": "Coral Peach",
+          "colorHex": "#F78888",
+          "size": "XL",
+          "stock": 20
+        },
+        {
+          "id": "v-7-2xl",
+          "sku": "VDY-CPS-07-2XL",
+          "color": "Coral Peach",
+          "colorHex": "#F78888",
+          "size": "2XL",
+          "stock": 15
+        },
+        {
+          "id": "v-7-3xl",
+          "sku": "VDY-CPS-07-3XL",
+          "color": "Coral Peach",
+          "colorHex": "#F78888",
+          "size": "3XL",
+          "stock": 10
+        },
+        {
+          "id": "v-7-4xl",
+          "sku": "VDY-CPS-07-4XL",
+          "color": "Coral Peach",
+          "colorHex": "#F78888",
+          "size": "4XL",
+          "stock": 5
+        },
+        {
+          "id": "v-7-5xl",
+          "sku": "VDY-CPS-07-5XL",
+          "color": "Coral Peach",
+          "colorHex": "#F78888",
+          "size": "5XL",
+          "stock": 4
+        }
+      ],
+      "fabric": "Cotton",
+      "work": "Neck Embroidery",
+      "pattern": "Solid",
+      "sleeve": "3/4th Sleeve",
+      "neckType": "Mandarin Collar",
+      "occasion": "Casual",
+      "fit": "Straight",
+      "length": "Short",
+      "bottomType": "None",
+      "dupattaIncluded": false,
+      "description": "A versatile short ethnic tunic designed for pairing with blue denim or white cigarette pants. Minimalist pastel tone with delicate mirror & thread detailing on the yoke.",
+      "careInstructions": [
+        "Normal machine wash",
+        "Line dry in shade"
+      ],
+      "features": [
+        "Perfect Hip-Length Tunic Cut",
+        "Pairs with Jeans, Trousers or Palazzos",
+        "Soft Pre-Shrunk Bio-Washed Cotton",
+        "Wooden Accent Buttons"
+      ],
+      "isBestseller": true,
+      "isNewArrival": false,
+      "isTrending": false,
+      "tags": [
+        "short kurti",
+        "college wear",
+        "office casual",
+        "under 999",
+        "peach top"
+      ],
+      "createdAt": "2026-07-10T00:00:00Z"
+    },
+    {
+      "id": "prod-8",
+      "name": "Teal Peacock Embroidered Linen Co-ord Lounge Set",
+      "slug": "teal-peacock-embroidered-linen-coord-set",
+      "sku": "VDY-TPL-08",
+      "category": "Co-ord Sets",
+      "subcategory": "Cotton Co-ords",
+      "collections": [
+        "Everyday Elegance",
+        "Office & Workwear Edit"
+      ],
+      "mrp": 2799,
+      "sellingPrice": 1799,
+      "costPrice": 850,
+      "discountPercent": 36,
+      "rating": 4.88,
+      "reviewCount": 94,
+      "images": [
+        {
+          "id": "img-8-1",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Teal Blue Linen Co-ord Set",
+          "isPrimary": true,
+          "type": "front"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-8-m",
+          "sku": "VDY-TPL-08-M",
+          "color": "Teal Blue",
+          "colorHex": "#005F73",
+          "size": "M",
+          "stock": 12
+        },
+        {
+          "id": "v-8-l",
+          "sku": "VDY-TPL-08-L",
+          "color": "Teal Blue",
+          "colorHex": "#005F73",
+          "size": "L",
+          "stock": 18
+        },
+        {
+          "id": "v-8-xl",
+          "sku": "VDY-TPL-08-XL",
+          "color": "Teal Blue",
+          "colorHex": "#005F73",
+          "size": "XL",
+          "stock": 14
+        },
+        {
+          "id": "v-8-2xl",
+          "sku": "VDY-TPL-08-2XL",
+          "color": "Teal Blue",
+          "colorHex": "#005F73",
+          "size": "2XL",
+          "stock": 7
+        },
+        {
+          "id": "v-8-3xl",
+          "sku": "VDY-TPL-08-3XL",
+          "color": "Teal Blue",
+          "colorHex": "#005F73",
+          "size": "3XL",
+          "stock": 4
+        },
+        {
+          "id": "v-8-4xl",
+          "sku": "VDY-TPL-08-4XL",
+          "color": "Teal Blue",
+          "colorHex": "#005F73",
+          "size": "4XL",
+          "stock": 2
+        }
+      ],
+      "fabric": "Linen",
+      "work": "Neck Embroidery",
+      "pattern": "Solid",
+      "sleeve": "Full Sleeve",
+      "neckType": "Mandarin Collar",
+      "occasion": "Office Wear",
+      "fit": "Co-ord",
+      "length": "Calf Length",
+      "bottomType": "Straight Pant",
+      "dupattaIncluded": false,
+      "description": "Modern relaxed luxury in pure blended linen. Features a structured high-low hem tunic with fine tonal self-embroidery and tapered trousers equipped with dual side pockets.",
+      "careInstructions": [
+        "Dry clean or delicate hand wash",
+        "Steam iron for crisp finish"
+      ],
+      "features": [
+        "High-Grade European Flax Linen Blend",
+        "Anti-Crease Finish for Long Work Days",
+        "Side Slits with Embroidered Reinforcements",
+        "Functional Deep Utility Pockets"
+      ],
+      "isBestseller": false,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "linen co-ord",
+        "teal blue",
+        "executive ethnic",
+        "plus size friendly",
+        "modern kurti"
+      ],
+      "createdAt": "2026-08-19T00:00:00Z"
+    },
+    {
+      "id": "prod-men-1",
+      "name": "Mustard Yellow Handloom Cotton Long Kurta with Churidars",
+      "slug": "mustard-yellow-handloom-cotton-long-kurta",
+      "sku": "VDY-MEN-01",
+      "category": "Men",
+      "subcategory": "Ethnic Topwear",
+      "subSubCategory": "Long Ethnic Kurtas",
+      "gender": "Men",
+      "collections": [
+        "Festive Chanderi & Zari",
+        "Pure Cotton Comfort"
+      ],
+      "mrp": 2999,
+      "sellingPrice": 1699,
+      "costPrice": 750,
+      "discountPercent": 43,
+      "rating": 4.8,
+      "reviewCount": 76,
+      "images": [
+        {
+          "id": "img-m1-1",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Men Mustard Yellow Handloom Kurta Front",
+          "isPrimary": true,
+          "type": "front"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-m1-s",
+          "sku": "VDY-MEN-01-S",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "S",
+          "stock": 10
+        },
+        {
+          "id": "v-m1-m",
+          "sku": "VDY-MEN-01-M",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "M",
+          "stock": 15
+        },
+        {
+          "id": "v-m1-l",
+          "sku": "VDY-MEN-01-L",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "L",
+          "stock": 20
+        },
+        {
+          "id": "v-m1-xl",
+          "sku": "VDY-MEN-01-XL",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "XL",
+          "stock": 12
+        },
+        {
+          "id": "v-m1-2xl",
+          "sku": "VDY-MEN-01-2XL",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "2XL",
+          "stock": 8
+        },
+        {
+          "id": "v-m1-3xl",
+          "sku": "VDY-MEN-01-3XL",
+          "color": "Mustard Yellow",
+          "colorHex": "#E3A857",
+          "size": "3XL",
+          "stock": 5
+        }
+      ],
+      "fabric": "Cotton",
+      "work": "Solid",
+      "pattern": "Solid",
+      "sleeve": "Full Sleeve",
+      "neckType": "Mandarin Collar",
+      "occasion": "Festive",
+      "fit": "Regular Fit",
+      "length": "Calf Length",
+      "bottomType": "Straight Pant",
+      "dupattaIncluded": false,
+      "description": "A classic men’s festive long kurta tailored in textured handloom slub cotton. Features side slits, mother-of-pearl buttons, and comes with breathable white cotton pyjamas.",
+      "careInstructions": [
+        "Dry clean or gentle machine wash cold",
+        "Warm iron"
+      ],
+      "features": [
+        "100% Breathable Khadi Cotton",
+        "Concealed Side Pockets",
+        "Mandarin Bandhgala Collar"
+      ],
+      "isBestseller": true,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "men kurta",
+        "haldi outfit",
+        "yellow kurta",
+        "ethnic men",
+        "cotton kurta"
+      ],
+      "createdAt": "2026-08-20T00:00:00Z"
+    },
+    {
+      "id": "prod-men-2",
+      "name": "Royal Silk Brocade Nehru Jacket with Metal Buttons",
+      "slug": "royal-silk-brocade-nehru-jacket",
+      "sku": "VDY-MEN-02",
+      "category": "Men",
+      "subcategory": "Ethnic Topwear",
+      "subSubCategory": "Nehru & Bundi Jackets",
+      "gender": "Men",
+      "collections": [
+        "Festive Chanderi & Zari"
+      ],
+      "mrp": 3499,
+      "sellingPrice": 1999,
+      "costPrice": 900,
+      "discountPercent": 42,
+      "rating": 4.9,
+      "reviewCount": 52,
+      "images": [
+        {
+          "id": "img-m2-1",
+          "url": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+          "altText": "Royal Silk Nehru Jacket Front",
+          "isPrimary": true,
+          "type": "front"
+        },
+        {
+          "id": "img-m2-2",
+          "url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+          "altText": "Antique Lion-Crest Metal Buttons and Pocket",
+          "type": "detail"
+        }
+      ],
+      "variants": [
+        {
+          "id": "v-m2-m",
+          "sku": "VDY-MEN-02-M",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "M",
+          "stock": 8
+        },
+        {
+          "id": "v-m2-l",
+          "sku": "VDY-MEN-02-L",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "L",
+          "stock": 14
+        },
+        {
+          "id": "v-m2-xl",
+          "sku": "VDY-MEN-02-XL",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "XL",
+          "stock": 10
+        },
+        {
+          "id": "v-m2-2xl",
+          "sku": "VDY-MEN-02-2XL",
+          "color": "Deep Wine",
+          "colorHex": "#7B2435",
+          "size": "2XL",
+          "stock": 6
+        }
+      ],
+      "fabric": "Silk",
+      "work": "Zari Work",
+      "pattern": "Geometric",
+      "sleeve": "Sleeveless",
+      "neckType": "Mandarin Collar",
+      "occasion": "Wedding",
+      "fit": "Regular Fit",
+      "bottomType": "None",
+      "dupattaIncluded": false,
+      "description": "Elevate your festive presence with this exquisite Banarasi brocade Bundi jacket. Tailored with antique brass buttons, a chest pocket for pocket squares, and satin lining.",
+      "careInstructions": [
+        "Dry clean only"
+      ],
+      "features": [
+        "Rich Jacquard Brocade Weave",
+        "Metallic Lion-Crest Buttons",
+        "Interior Breast Pocket"
+      ],
+      "isBestseller": false,
+      "isNewArrival": true,
+      "isTrending": true,
+      "tags": [
+        "nehru jacket",
+        "men wedding",
+        "bundi jacket",
+        "wine jacket",
+        "silk jacket"
+      ],
+      "createdAt": "2026-08-21T00:00:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-google-101",
+      "name": "Kushagra Avyukta",
+      "email": "kushagraavyukta@gmail.com",
+      "phone": "+91 98712 34560",
+      "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+      "role": "customer",
+      "authProvider": "google",
+      "totalOrders": 3,
+      "totalSpent": 6497,
+      "lastLoginAt": "2026-08-22T05:30:00Z",
+      "createdAt": "2026-08-01T10:15:00Z",
+      "addresses": [
+        {
+          "id": "addr-kush-1",
+          "fullName": "Kushagra Avyukta",
+          "phone": "+91 98712 34560",
+          "addressLine1": "Tower 4, Flat 1402, Godrej Woodsman Estate",
+          "addressLine2": "Bellary Road, Hebbal",
+          "landmark": "Near Aster CMI Hospital",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "pincode": "560024",
+          "type": "Home",
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "id": "usr-google-102",
+      "name": "Pooja Sharma",
+      "email": "pooja.sharma.crafts@gmail.com",
+      "phone": "+91 98234 56789",
+      "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+      "role": "customer",
+      "authProvider": "google",
+      "totalOrders": 2,
+      "totalSpent": 4098,
+      "lastLoginAt": "2026-08-21T18:40:00Z",
+      "createdAt": "2026-08-05T14:30:00Z",
+      "addresses": [
+        {
+          "id": "addr-pooja-1",
+          "fullName": "Pooja Sharma",
+          "phone": "+91 98234 56789",
+          "addressLine1": "Flat 12B, Lakeview Apartments, Powai",
+          "addressLine2": "Hiranandani Gardens",
+          "landmark": "Near Galleria Mall",
+          "city": "Mumbai",
+          "state": "Maharashtra",
+          "pincode": "400076",
+          "type": "Home",
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "id": "usr-google-103",
+      "name": "Ananya Roy",
+      "email": "ananya.roy@example.com",
+      "phone": "+91 98765 43210",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      "role": "customer",
+      "authProvider": "google",
+      "totalOrders": 4,
+      "totalSpent": 9296,
+      "lastLoginAt": "2026-08-22T04:10:00Z",
+      "createdAt": "2026-07-20T08:00:00Z",
+      "addresses": [
+        {
+          "id": "addr-ananya-1",
+          "fullName": "Ananya Roy",
+          "phone": "+91 98765 43210",
+          "addressLine1": "B-304, Green Glen Heights, Bellandur",
+          "addressLine2": "Outer Ring Road, Near EcoSpace",
+          "landmark": "Opposite Central Mall",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "pincode": "560103",
+          "type": "Home",
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "id": "usr-google-104",
+      "name": "Meera Iyer",
+      "email": "meera.iyer.fashion@gmail.com",
+      "phone": "+91 94455 67890",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+      "role": "customer",
+      "authProvider": "google",
+      "totalOrders": 1,
+      "totalSpent": 2899,
+      "lastLoginAt": "2026-08-20T11:22:00Z",
+      "createdAt": "2026-08-12T16:20:00Z",
+      "addresses": [
+        {
+          "id": "addr-meera-1",
+          "fullName": "Meera Iyer",
+          "phone": "+91 94455 67890",
+          "addressLine1": "32, Gandhi Nagar 2nd Main Road, Adyar",
+          "addressLine2": "Opposite Fortis Malar Hospital",
+          "city": "Chennai",
+          "state": "Tamil Nadu",
+          "pincode": "600020",
+          "type": "Home",
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "id": "usr-google-105",
+      "name": "Radhika Mehra",
+      "email": "radhika.mehra@delhi.ac.in",
+      "phone": "+91 98100 23456",
+      "avatarUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80",
+      "role": "customer",
+      "authProvider": "google",
+      "totalOrders": 2,
+      "totalSpent": 3598,
+      "lastLoginAt": "2026-08-19T09:15:00Z",
+      "createdAt": "2026-08-15T12:00:00Z",
+      "addresses": [
+        {
+          "id": "addr-radhika-1",
+          "fullName": "Radhika Mehra",
+          "phone": "+91 98100 23456",
+          "addressLine1": "C-4/18, Safdarjung Development Area (SDA)",
+          "addressLine2": "Opposite IIT Delhi Main Gate",
+          "city": "New Delhi",
+          "state": "Delhi",
+          "pincode": "110016",
+          "type": "Home",
+          "isDefault": true
+        }
+      ]
+    }
+  ],
+  "coupons": [
+    {
+      "code": "WELCOME10",
+      "title": "First Order Welcome Offer",
+      "description": "Get 10% OFF on your very first order with no minimum limit",
+      "discountType": "percentage",
+      "discountValue": 10,
+      "minOrderAmount": 499,
+      "maxDiscountAmount": 300,
+      "firstOrderOnly": true,
+      "expiryDate": "2026-12-31",
+      "isActive": true,
+      "usageCount": 420
+    },
+    {
+      "code": "NANDITA20",
+      "title": "Festive Season Flat 20% OFF",
+      "description": "Enjoy Flat 20% OFF on all Kurta Sets and Festive collections above ₹1499",
+      "discountType": "percentage",
+      "discountValue": 20,
+      "minOrderAmount": 1499,
+      "maxDiscountAmount": 800,
+      "firstOrderOnly": false,
+      "expiryDate": "2026-10-31",
+      "isActive": true,
+      "usageCount": 1250
+    },
+    {
+      "code": "FESTIVE500",
+      "title": "Flat ₹500 Instant Discount",
+      "description": "Save Flat ₹500 on luxury orders above ₹2499",
+      "discountType": "flat",
+      "discountValue": 500,
+      "minOrderAmount": 2499,
+      "firstOrderOnly": false,
+      "expiryDate": "2026-11-15",
+      "isActive": true,
+      "usageCount": 890
+    },
+    {
+      "code": "FREESHIP",
+      "title": "Free Express Shipping",
+      "description": "Enjoy zero delivery fees on all orders",
+      "discountType": "flat",
+      "discountValue": 99,
+      "minOrderAmount": 499,
+      "firstOrderOnly": false,
+      "expiryDate": "2026-12-31",
+      "isActive": true,
+      "usageCount": 2310
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann-1",
+      "text": "✨ Festive Launch: Use code NANDITA20 for Flat 20% OFF | Free Shipping on orders above ₹999",
+      "highlightText": "NANDITA20",
+      "linkText": "Shop Now",
+      "linkUrl": "/catalog?collection=festive",
+      "badge": "NEW",
+      "backgroundColor": "#7B2435",
+      "textColor": "#FFFFFF",
+      "isActive": true,
+      "order": 1
+    },
+    {
+      "id": "ann-2",
+      "text": "🌿 Handcrafted Pure Cotton & Mulmul Kurtis: Starting at just ₹699 | Cash on Delivery Available",
+      "highlightText": "₹699",
+      "linkText": "Explore",
+      "linkUrl": "/catalog?category=women",
+      "badge": "TRENDING",
+      "backgroundColor": "#621C2A",
+      "textColor": "#FFFFFF",
+      "isActive": true,
+      "order": 2
+    },
+    {
+      "id": "ann-3",
+      "text": "🚚 Same-Day Express Dispatch Across 25,000+ Indian Pincodes with Real-Time Tracking",
+      "highlightText": "Express",
+      "linkText": "Learn More",
+      "linkUrl": "/shipping-policy",
+      "backgroundColor": "#4A1520",
+      "textColor": "#FFFFFF",
+      "isActive": true,
+      "order": 3
+    }
+  ],
+  "navigationMenu": [
+    {
+      "id": "menu-women",
+      "title": "Women",
+      "url": "/catalog?category=women",
+      "type": "mega",
+      "order": 1,
+      "isActive": true,
+      "columns": [
+        {
+          "id": "col-indianwear",
+          "title": "Indianwear",
+          "url": "/catalog?category=women&sub=indianwear",
+          "order": 1,
+          "items": [
+            {
+              "id": "sub-kurtis",
+              "title": "Kurtas & Kurtis",
+              "url": "/catalog?category=women&type=kurtis",
+              "isFeatured": true,
+              "order": 1
+            },
+            {
+              "id": "sub-sets",
+              "title": "Kurta Sets (2 & 3 Pc)",
+              "url": "/catalog?category=women&type=kurta-sets",
+              "isNew": true,
+              "order": 2
+            },
+            {
+              "id": "sub-anarkalis",
+              "title": "Anarkali Suits",
+              "url": "/catalog?category=women&type=anarkalis",
+              "order": 3
+            },
+            {
+              "id": "sub-sarees",
+              "title": "Sarees & Drapes",
+              "url": "/catalog?category=women&type=sarees",
+              "order": 4
+            },
+            {
+              "id": "sub-chikankari",
+              "title": "Lucknowi Chikankari",
+              "url": "/catalog?category=women&type=chikankari",
+              "order": 5
+            },
+            {
+              "id": "sub-dupattas",
+              "title": "Dupattas & Stoles",
+              "url": "/catalog?category=women&type=dupattas",
+              "order": 6
+            }
+          ]
+        },
+        {
+          "id": "col-fabrics",
+          "title": "By Fabric",
+          "url": "/catalog?category=women",
+          "order": 2,
+          "items": [
+            {
+              "id": "sub-pure-cotton",
+              "title": "Pure Mulmul Cotton",
+              "url": "/catalog?fabric=Cotton",
+              "order": 1
+            },
+            {
+              "id": "sub-chanderi-silk",
+              "title": "Chanderi Silk",
+              "url": "/catalog?fabric=Chanderi",
+              "isFeatured": true,
+              "order": 2
+            },
+            {
+              "id": "sub-modal-rayon",
+              "title": "Soft Rayon & Modal",
+              "url": "/catalog?fabric=Rayon",
+              "order": 3
+            },
+            {
+              "id": "sub-georgette",
+              "title": "Festive Georgette",
+              "url": "/catalog?fabric=Georgette",
+              "order": 4
+            },
+            {
+              "id": "sub-linen",
+              "title": "Handloom Linen",
+              "url": "/catalog?fabric=Linen",
+              "order": 5
+            }
+          ]
+        },
+        {
+          "id": "col-occasions",
+          "title": "By Occasion",
+          "url": "/catalog?category=women",
+          "order": 3,
+          "items": [
+            {
+              "id": "sub-festive",
+              "title": "Festive & Weddings",
+              "url": "/catalog?occasion=Festive",
+              "isNew": true,
+              "order": 1
+            },
+            {
+              "id": "sub-office",
+              "title": "Daily & Workwear Kurtis",
+              "url": "/catalog?occasion=Office",
+              "order": 2
+            },
+            {
+              "id": "sub-casual",
+              "title": "Casual Brunch Wear",
+              "url": "/catalog?occasion=Casual",
+              "order": 3
+            },
+            {
+              "id": "sub-party",
+              "title": "Party & Evening Wear",
+              "url": "/catalog?occasion=Party",
+              "order": 4
+            }
+          ]
+        }
+      ],
+      "promoCards": [
+        {
+          "id": "promo-festive",
+          "title": "Festive Edit '26",
+          "subtitle": "Pure Chanderi & Gota Patti",
+          "badge": "FLAT 20% OFF",
+          "imageUrl": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80",
+          "linkUrl": "/catalog?collection=festive",
+          "ctaText": "Shop Festive"
+        },
+        {
+          "id": "promo-cotton",
+          "title": "Summer Mulmul",
+          "subtitle": "Breathable handcrafted daily kurtis",
+          "badge": "NEW IN",
+          "imageUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80",
+          "linkUrl": "/catalog?fabric=Cotton",
+          "ctaText": "Explore Cotton"
+        }
+      ]
+    },
+    {
+      "id": "menu-plus-size",
+      "title": "Plus Size (XS-5XL)",
+      "url": "/catalog?size=plus",
+      "badge": "3XL-5XL",
+      "badgeColor": "#7B2435",
+      "type": "dropdown",
+      "order": 2,
+      "isActive": true,
+      "columns": [
+        {
+          "id": "col-plus-types",
+          "title": "Curated Inclusive Fits",
+          "items": [
+            {
+              "id": "sub-plus-kurtis",
+              "title": "Plus Size Straight Kurtas",
+              "url": "/catalog?size=3XL&type=kurtis",
+              "order": 1
+            },
+            {
+              "id": "sub-plus-sets",
+              "title": "Plus Size Kurta Sets (3 Pc)",
+              "url": "/catalog?size=3XL&type=kurta-sets",
+              "order": 2
+            },
+            {
+              "id": "sub-plus-anarkalis",
+              "title": "Flared Anarkalis (Up to 5XL)",
+              "url": "/catalog?size=4XL&type=anarkalis",
+              "order": 3
+            }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "menu-new-arrivals",
+      "title": "New Arrivals",
+      "url": "/catalog?filter=new",
+      "badge": "FRESH",
+      "badgeColor": "#16A34A",
+      "type": "link",
+      "order": 3,
+      "isActive": true
+    },
+    {
+      "id": "menu-festive",
+      "title": "Festive & Wedding",
+      "url": "/catalog?collection=festive",
+      "isHighlight": true,
+      "type": "link",
+      "order": 4,
+      "isActive": true
+    },
+    {
+      "id": "menu-bestsellers",
+      "title": "Bestsellers",
+      "url": "/catalog?filter=bestseller",
+      "type": "link",
+      "order": 5,
+      "isActive": true
+    }
+  ],
+  "homepageSections": [
+    {
+      "id": "sec-hero-slider",
+      "type": "hero_banner_slider",
+      "title": "Hero Banner Carousel",
+      "order": 1,
+      "isActive": true
+    },
+    {
+      "id": "sec-features-strip",
+      "type": "features_strip",
+      "title": "Studio Promises & Trust Badges",
+      "order": 2,
+      "isActive": true
+    },
+    {
+      "id": "sec-category-circles",
+      "type": "category_circles",
+      "title": "Shop By Silhouette",
+      "subtitle": "Discover hand-finished styles tailored for Indian celebrations",
+      "layout": "grid",
+      "order": 3,
+      "isActive": true
+    },
+    {
+      "id": "sec-trending-kurtis",
+      "type": "product_carousel",
+      "title": "Trending Handcrafted Kurtis",
+      "subtitle": "Most-loved royal weaves, angrakhas, and straight cuts",
+      "filterCriteria": {
+        "isTrending": true,
+        "limit": 8
+      },
+      "layout": "carousel",
+      "order": 4,
+      "isActive": true
+    },
+    {
+      "id": "sec-collection-festive",
+      "type": "collection_banner",
+      "title": "The Festive Weaves '26",
+      "subtitle": "Opulent Gotapatti, Zari borders and Chanderi kurtas",
+      "imageUrl": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&q=80",
+      "linkUrl": "/catalog?collection=festive",
+      "ctaText": "Explore Festive Edit",
+      "order": 5,
+      "isActive": true
+    },
+    {
+      "id": "sec-bestsellers",
+      "type": "product_grid",
+      "title": "Bestselling Kurta Sets",
+      "subtitle": "Highest rated styles with verified boutique customer reviews",
+      "filterCriteria": {
+        "isBestseller": true,
+        "limit": 8
+      },
+      "layout": "grid",
+      "order": 6,
+      "isActive": true
+    },
+    {
+      "id": "sec-promo-split",
+      "type": "promo_split_banner",
+      "title": "Curated Boutique Offers",
+      "order": 7,
+      "isActive": true
+    },
+    {
+      "id": "sec-plus-size-spotlight",
+      "type": "product_carousel",
+      "title": "Inclusive Sizing Edit (XS - 5XL)",
+      "subtitle": "Flattering silhouettes crafted to perfection in sizes XS through 5XL",
+      "filterCriteria": {
+        "isPlusSize": true,
+        "limit": 6
+      },
+      "layout": "carousel",
+      "order": 8,
+      "isActive": true
+    },
+    {
+      "id": "sec-testimonials",
+      "type": "testimonials",
+      "title": "Loved by 25,000+ Women",
+      "subtitle": "Real reviews from verified patrons across India",
+      "order": 9,
+      "isActive": true
+    },
+    {
+      "id": "sec-instagram-feed",
+      "type": "instagram_feed",
+      "title": "#NanditaWomen on Instagram",
+      "subtitle": "Tag @nanditafashion to get featured on our studio wall",
+      "order": 10,
+      "isActive": true
+    }
+  ],
+  "attributes": [
+    {
+      "id": "attr-fabric",
+      "name": "Fabric & Material",
+      "key": "fabric",
+      "options": [
+        {
+          "id": "opt-f1",
+          "label": "100% Pure Cotton",
+          "value": "Cotton"
+        },
+        {
+          "id": "opt-f2",
+          "label": "Chanderi Silk",
+          "value": "Chanderi Silk"
+        },
+        {
+          "id": "opt-f3",
+          "label": "Soft Modal Rayon",
+          "value": "Rayon"
+        },
+        {
+          "id": "opt-f4",
+          "label": "Festive Georgette",
+          "value": "Georgette"
+        },
+        {
+          "id": "opt-f5",
+          "label": "Handloom Linen",
+          "value": "Linen"
+        },
+        {
+          "id": "opt-f6",
+          "label": "Silk Blend",
+          "value": "Silk Blend"
+        },
+        {
+          "id": "opt-f7",
+          "label": "Royal Velvet",
+          "value": "Velvet"
+        },
+        {
+          "id": "opt-f8",
+          "label": "Mulmul Cotton",
+          "value": "Mulmul"
+        }
+      ]
+    },
+    {
+      "id": "attr-work",
+      "name": "Craft & Workmanship",
+      "key": "work",
+      "options": [
+        {
+          "id": "opt-w1",
+          "label": "Zari Embroidery",
+          "value": "Zari Embroidery"
+        },
+        {
+          "id": "opt-w2",
+          "label": "Gota Patti Work",
+          "value": "Gota Patti"
+        },
+        {
+          "id": "opt-w3",
+          "label": "Lucknowi Chikankari",
+          "value": "Chikankari"
+        },
+        {
+          "id": "opt-w4",
+          "label": "Hand-Block Jaipur Print",
+          "value": "Hand Block Print"
+        },
+        {
+          "id": "opt-w5",
+          "label": "Mirror & Thread Work",
+          "value": "Mirror Work"
+        },
+        {
+          "id": "opt-w6",
+          "label": "Foil Print Accent",
+          "value": "Foil Print"
+        },
+        {
+          "id": "opt-w7",
+          "label": "Kalamkari Print",
+          "value": "Kalamkari"
+        }
+      ]
+    },
+    {
+      "id": "attr-neck",
+      "name": "Neck & Collar Style",
+      "key": "neck",
+      "options": [
+        {
+          "id": "opt-n1",
+          "label": "Mandarin Collar with V-Slit",
+          "value": "Mandarin Collar"
+        },
+        {
+          "id": "opt-n2",
+          "label": "Classic Round Neck",
+          "value": "Round Neck"
+        },
+        {
+          "id": "opt-n3",
+          "label": "Angrakha Overlap Neck",
+          "value": "Angrakha"
+        },
+        {
+          "id": "opt-n4",
+          "label": "Sweetheart Neck",
+          "value": "Sweetheart"
+        },
+        {
+          "id": "opt-n5",
+          "label": "Keyhole Neck",
+          "value": "Keyhole"
+        },
+        {
+          "id": "opt-n6",
+          "label": "Boat Neck",
+          "value": "Boat Neck"
+        },
+        {
+          "id": "opt-n7",
+          "label": "V-Neck",
+          "value": "V-Neck"
+        }
+      ]
+    },
+    {
+      "id": "attr-sleeve",
+      "name": "Sleeve Length & Style",
+      "key": "sleeve",
+      "options": [
+        {
+          "id": "opt-s1",
+          "label": "3/4th Sleeves with Zari Border",
+          "value": "3/4th Sleeve"
+        },
+        {
+          "id": "opt-s2",
+          "label": "Full Length Sleeves",
+          "value": "Full Sleeve"
+        },
+        {
+          "id": "opt-s3",
+          "label": "Sleeveless with Attached Short Sleeves",
+          "value": "Sleeveless"
+        },
+        {
+          "id": "opt-s4",
+          "label": "Bell / Flared Sleeves",
+          "value": "Bell Sleeve"
+        },
+        {
+          "id": "opt-s5",
+          "label": "Puff / Bishop Sleeves",
+          "value": "Puff Sleeve"
+        }
+      ]
+    },
+    {
+      "id": "attr-occasion",
+      "name": "Occasion & Event",
+      "key": "occasion",
+      "options": [
+        {
+          "id": "opt-o1",
+          "label": "Festive & Celebration",
+          "value": "Festive"
+        },
+        {
+          "id": "opt-o2",
+          "label": "Wedding / Sangeet / Mehndi",
+          "value": "Wedding"
+        },
+        {
+          "id": "opt-o3",
+          "label": "Daily & Office Wear",
+          "value": "Daily / Office"
+        },
+        {
+          "id": "opt-o4",
+          "label": "Casual Brunch & Outings",
+          "value": "Casual"
+        },
+        {
+          "id": "opt-o5",
+          "label": "Party & Evening Wear",
+          "value": "Party"
+        }
+      ]
+    },
+    {
+      "id": "attr-pattern",
+      "name": "Pattern & Silhouette",
+      "key": "pattern",
+      "options": [
+        {
+          "id": "opt-p1",
+          "label": "Straight Cut Kurta",
+          "value": "Straight"
+        },
+        {
+          "id": "opt-p2",
+          "label": "Flared Anarkali",
+          "value": "Anarkali"
+        },
+        {
+          "id": "opt-p3",
+          "label": "A-Line Silhouette",
+          "value": "A-Line"
+        },
+        {
+          "id": "opt-p4",
+          "label": "2-Piece Co-ord Set",
+          "value": "Co-ord"
+        },
+        {
+          "id": "opt-p5",
+          "label": "3-Piece Kurta Dupatta Set",
+          "value": "3-Piece Set"
+        },
+        {
+          "id": "opt-p6",
+          "label": "Tiered Ethnic Maxi",
+          "value": "Tiered Maxi"
+        }
+      ]
+    },
+    {
+      "id": "attr-fit",
+      "name": "Fit & Ease",
+      "key": "fit",
+      "options": [
+        {
+          "id": "opt-ft1",
+          "label": "Regular Comfort Fit",
+          "value": "Regular Fit"
+        },
+        {
+          "id": "opt-ft2",
+          "label": "Relaxed A-Line Fit",
+          "value": "Relaxed Fit"
+        },
+        {
+          "id": "opt-ft3",
+          "label": "Tailored Slim Fit",
+          "value": "Tailored Fit"
+        },
+        {
+          "id": "opt-ft4",
+          "label": "Oversized / Plus Comfort Fit",
+          "value": "Oversized Fit"
+        }
+      ]
+    },
+    {
+      "id": "attr-length",
+      "name": "Garment Length",
+      "key": "length",
+      "options": [
+        {
+          "id": "opt-l1",
+          "label": "Calf Length (44-46 in)",
+          "value": "Calf Length"
+        },
+        {
+          "id": "opt-l2",
+          "label": "Knee Length (38-40 in)",
+          "value": "Knee Length"
+        },
+        {
+          "id": "opt-l3",
+          "label": "Floor Length (52-54 in)",
+          "value": "Floor Length"
+        },
+        {
+          "id": "opt-l4",
+          "label": "Short Tunic Length (30-32 in)",
+          "value": "Short Length"
+        }
+      ]
+    }
+  ],
+  "sizeGroups": [
+    {
+      "id": "sg-standard",
+      "name": "Standard Ready-to-Wear (XS to XL)",
+      "description": "Everyday cotton & regular fit kurtis",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "isDefault": true,
+      "isActive": true
+    },
+    {
+      "id": "sg-extended",
+      "name": "Classic Indian Extended (M to 3XL)",
+      "description": "Anarkalis, kurta sets, and festive celebratory wear",
+      "sizes": [
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "isDefault": false,
+      "isActive": true
+    },
+    {
+      "id": "sg-plus",
+      "name": "Plus Size Special Curve (2XL to 5XL)",
+      "description": "Dedicated relaxed-fit plus size kurtis & tunics",
+      "sizes": [
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "isDefault": false,
+      "isActive": true
+    },
+    {
+      "id": "sg-free",
+      "name": "Free Size / One Size Fits All",
+      "description": "Sarees, unstitched dress materials, and free-drape kaftans",
+      "sizes": [
+        "Free Size"
+      ],
+      "isDefault": false,
+      "isActive": true
+    }
+  ],
+  "colors": [
+    {
+      "id": "col-1",
+      "name": "Dusty Rose",
+      "hex": "#D88B97",
+      "isActive": true,
+      "order": 1
+    },
+    {
+      "id": "col-2",
+      "name": "Royal Ruby Maroon",
+      "hex": "#7B2435",
+      "isActive": true,
+      "order": 2
+    },
+    {
+      "id": "col-3",
+      "name": "Peacock Teal Blue",
+      "hex": "#1E6B7B",
+      "isActive": true,
+      "order": 3
+    },
+    {
+      "id": "col-4",
+      "name": "Mustard Yellow",
+      "hex": "#E5A93C",
+      "isActive": true,
+      "order": 4
+    },
+    {
+      "id": "col-5",
+      "name": "Emerald Forest Green",
+      "hex": "#225E48",
+      "isActive": true,
+      "order": 5
+    },
+    {
+      "id": "col-6",
+      "name": "Ivory Pearl White",
+      "hex": "#FDFBF7",
+      "isActive": true,
+      "order": 6
+    },
+    {
+      "id": "col-7",
+      "name": "Midnight Charcoal Black",
+      "hex": "#222222",
+      "isActive": true,
+      "order": 7
+    },
+    {
+      "id": "col-8",
+      "name": "Pastel Peach Coral",
+      "hex": "#F4A28C",
+      "isActive": true,
+      "order": 8
+    },
+    {
+      "id": "col-9",
+      "name": "Royal Indigo Navy",
+      "hex": "#2A3F6D",
+      "isActive": true,
+      "order": 9
+    },
+    {
+      "id": "col-10",
+      "name": "Lavender Lilac",
+      "hex": "#B8A1C9",
+      "isActive": true,
+      "order": 10
+    },
+    {
+      "id": "col-11",
+      "name": "Antique Gold / Zari",
+      "hex": "#D4AF37",
+      "isActive": true,
+      "order": 11
+    }
+  ],
+  "sizeGuides": [
+    {
+      "id": "sg-kurtis",
+      "title": "Standard Ethnic Kurti & Tunic Size Chart",
+      "measurementType": "garment",
+      "precedenceLevel": "category",
+      "categoryIds": [
+        "cat-women",
+        "kurtas-kurtis",
+        "kurtis"
+      ],
+      "categoryNames": [
+        "Kurtas & Kurtis",
+        "Ethnic Tops & Tunics"
+      ],
+      "description": "Standard sizing for straight, A-line, and short ethnic kurtis. Values represent finished garment measurements with +2 inches ease.",
+      "unitDefault": "inches",
+      "easeAllowanceInches": 2,
+      "isDefault": true,
+      "isActive": true,
+      "version": 1,
+      "customColumns": [
+        {
+          "id": "col-bust",
+          "name": "Bust (Chest)",
+          "key": "bust",
+          "unit": "inches",
+          "isRequired": true,
+          "description": "Circumference at fullest part of chest"
+        },
+        {
+          "id": "col-waist",
+          "name": "Waist",
+          "key": "waist",
+          "unit": "inches",
+          "isRequired": true,
+          "description": "Natural waistline measurement"
+        },
+        {
+          "id": "col-hip",
+          "name": "Hip",
+          "key": "hip",
+          "unit": "inches",
+          "isRequired": true,
+          "description": "Widest point of hips/seat"
+        },
+        {
+          "id": "col-length",
+          "name": "Garment Length",
+          "key": "length",
+          "unit": "inches",
+          "isRequired": false,
+          "description": "From shoulder high point to hem"
+        },
+        {
+          "id": "col-shoulder",
+          "name": "Shoulder Width",
+          "key": "shoulder",
+          "unit": "inches",
+          "isRequired": false,
+          "description": "Shoulder tip to tip across back"
+        },
+        {
+          "id": "col-armhole",
+          "name": "Armhole Curvature",
+          "key": "armhole",
+          "unit": "inches",
+          "isRequired": false,
+          "description": "Total armhole round"
+        }
+      ],
+      "measurements": [
+        {
+          "size": "XS",
+          "bust": 34,
+          "waist": 30,
+          "hip": 36,
+          "length": 44,
+          "shoulder": 13.5,
+          "armhole": 16
+        },
+        {
+          "size": "S",
+          "bust": 36,
+          "waist": 32,
+          "hip": 38,
+          "length": 44,
+          "shoulder": 14,
+          "armhole": 16.5
+        },
+        {
+          "size": "M",
+          "bust": 38,
+          "waist": 34,
+          "hip": 40,
+          "length": 44,
+          "shoulder": 14.5,
+          "armhole": 17
+        },
+        {
+          "size": "L",
+          "bust": 40,
+          "waist": 36,
+          "hip": 42,
+          "length": 45,
+          "shoulder": 15,
+          "armhole": 18
+        },
+        {
+          "size": "XL",
+          "bust": 42,
+          "waist": 38,
+          "hip": 44,
+          "length": 45,
+          "shoulder": 15.5,
+          "armhole": 19
+        },
+        {
+          "size": "2XL",
+          "bust": 44,
+          "waist": 40,
+          "hip": 46,
+          "length": 46,
+          "shoulder": 16,
+          "armhole": 20
+        },
+        {
+          "size": "3XL",
+          "bust": 46,
+          "waist": 42,
+          "hip": 48,
+          "length": 46,
+          "shoulder": 16.5,
+          "armhole": 21
+        },
+        {
+          "size": "4XL",
+          "bust": 48,
+          "waist": 44,
+          "hip": 50,
+          "length": 46,
+          "shoulder": 17,
+          "armhole": 22
+        },
+        {
+          "size": "5XL",
+          "bust": 50,
+          "waist": 46,
+          "hip": 52,
+          "length": 46,
+          "shoulder": 17.5,
+          "armhole": 23
+        }
+      ],
+      "rules": [
+        {
+          "id": "rule-kurtis-bust-36",
+          "name": "Standard Medium Rule (Bust 34-36.5\")",
+          "priority": 10,
+          "condition": {
+            "minBust": 34,
+            "maxBust": 36.5,
+            "fitPreference": "regular"
+          },
+          "recommendedSize": "M",
+          "easeAdjustmentInches": 2,
+          "confidenceScore": 95,
+          "explanation": "Garment bust of 38\" provides ideal +2.0\" graceful drape over 34-36.5\" bust body profile.",
+          "betweenSizesRecommendation": "size_up",
+          "isActive": true
+        },
+        {
+          "id": "rule-kurtis-bust-38",
+          "name": "Standard Large Rule (Bust 36.6-38.5\")",
+          "priority": 10,
+          "condition": {
+            "minBust": 36.6,
+            "maxBust": 38.5,
+            "fitPreference": "regular"
+          },
+          "recommendedSize": "L",
+          "easeAdjustmentInches": 2,
+          "confidenceScore": 95,
+          "explanation": "Garment bust of 40\" provides ideal comfort for 36.6-38.5\" body measurements.",
+          "betweenSizesRecommendation": "size_up",
+          "isActive": true
+        },
+        {
+          "id": "rule-kurtis-bust-40",
+          "name": "Standard XL Rule (Bust 38.6-40.5\")",
+          "priority": 10,
+          "condition": {
+            "minBust": 38.6,
+            "maxBust": 40.5,
+            "fitPreference": "regular"
+          },
+          "recommendedSize": "XL",
+          "easeAdjustmentInches": 2,
+          "confidenceScore": 95,
+          "explanation": "Garment bust of 42\" delivers relaxed ethnic silhouette without pull across yoke.",
+          "betweenSizesRecommendation": "size_up",
+          "isActive": true
+        }
+      ],
+      "howToMeasure": {
+        "bustTip": "Measure around the fullest part of your chest with measuring tape parallel to the ground.",
+        "waistTip": "Measure around your natural waistline, keeping tape comfortable.",
+        "hipTip": "Measure around the widest point of your hips and seat.",
+        "lengthTip": "Measured from the high point shoulder down to the garment hemline.",
+        "shoulderTip": "Measure from one acromion shoulder bone edge across back to the other.",
+        "easeNote": "All Vedaaya finished garments feature a +2\" ease over body measurements for an elegant and comfortable drape.",
+        "instructions": [
+          {
+            "field": "bust",
+            "label": "Bust / Chest Circumference",
+            "tip": "Hold the tape level around the fullest point of the bust without digging in.",
+            "imageUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80",
+            "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          },
+          {
+            "field": "waist",
+            "label": "Natural Waistline",
+            "tip": "Find the narrowest natural crease of your torso (around 1-2 inches above navel).",
+            "imageUrl": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            "field": "hip",
+            "label": "Full Hip Circumference",
+            "tip": "Stand with feet together and measure around the fullest curve of the hips and buttocks.",
+            "imageUrl": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            "field": "shoulder",
+            "label": "Across Shoulder Width",
+            "tip": "Measure across the upper back from outer shoulder bone to outer shoulder bone.",
+            "imageUrl": "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80"
+          },
+          {
+            "field": "length",
+            "label": "Garment Kurti Length",
+            "tip": "Measure straight down from high point of shoulder where neck seam rests down to desired hemline.",
+            "imageUrl": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sg-anarkali",
+      "title": "Anarkali & Flared Suit Set Guide",
+      "measurementType": "garment",
+      "precedenceLevel": "category",
+      "categoryIds": [
+        "anarkalis",
+        "kurta-sets"
+      ],
+      "categoryNames": [
+        "Anarkali Suits",
+        "Kurta Sets (2 & 3 Pc)"
+      ],
+      "description": "Measurements for flared Anarkalis, Angrakhas, and layered Festive Suits. Features fitted bodice and empire waist.",
+      "unitDefault": "inches",
+      "easeAllowanceInches": 2,
+      "isDefault": false,
+      "isActive": true,
+      "version": 1,
+      "customColumns": [
+        {
+          "id": "col-bust",
+          "name": "Bust (Chest)",
+          "key": "bust",
+          "unit": "inches",
+          "isRequired": true
+        },
+        {
+          "id": "col-waist",
+          "name": "Empire Waist",
+          "key": "waist",
+          "unit": "inches",
+          "isRequired": true
+        },
+        {
+          "id": "col-hip",
+          "name": "Flare Hip Allowance",
+          "key": "hip",
+          "unit": "inches",
+          "isRequired": true
+        },
+        {
+          "id": "col-length",
+          "name": "Floor Length",
+          "key": "length",
+          "unit": "inches",
+          "isRequired": false
+        },
+        {
+          "id": "col-shoulder",
+          "name": "Shoulder",
+          "key": "shoulder",
+          "unit": "inches",
+          "isRequired": false
+        },
+        {
+          "id": "col-flare",
+          "name": "Kali Ghera (Flare)",
+          "key": "flare",
+          "unit": "inches",
+          "isRequired": false
+        }
+      ],
+      "measurements": [
+        {
+          "size": "S",
+          "bust": 36,
+          "waist": 31,
+          "hip": 42,
+          "length": 50,
+          "shoulder": 14,
+          "flare": 120
+        },
+        {
+          "size": "M",
+          "bust": 38,
+          "waist": 33,
+          "hip": 44,
+          "length": 50,
+          "shoulder": 14.5,
+          "flare": 125
+        },
+        {
+          "size": "L",
+          "bust": 40,
+          "waist": 35,
+          "hip": 46,
+          "length": 52,
+          "shoulder": 15,
+          "flare": 130
+        },
+        {
+          "size": "XL",
+          "bust": 42,
+          "waist": 37,
+          "hip": 48,
+          "length": 52,
+          "shoulder": 15.5,
+          "flare": 135
+        },
+        {
+          "size": "2XL",
+          "bust": 44,
+          "waist": 39,
+          "hip": 50,
+          "length": 52,
+          "shoulder": 16,
+          "flare": 140
+        },
+        {
+          "size": "3XL",
+          "bust": 46,
+          "waist": 41,
+          "hip": 52,
+          "length": 52,
+          "shoulder": 16.5,
+          "flare": 145
+        }
+      ],
+      "howToMeasure": {
+        "bustTip": "Fitted at the yoke and chest, cascading into a flare below waist.",
+        "waistTip": "Measure where the empire cut sits (approx. 2 inches above navel).",
+        "hipTip": "Generous flare allows easy fit across all hip profiles.",
+        "lengthTip": "Full floor/ankle grazing length from shoulder seam to hem.",
+        "shoulderTip": "Measure tip to tip across back.",
+        "easeNote": "Fitted yoke with flared kalis ensures regal comfort.",
+        "instructions": [
+          {
+            "field": "bust",
+            "label": "Fitted Bodice Chest",
+            "tip": "Measure across the fullest part of bust over the undergarments you plan to wear."
+          },
+          {
+            "field": "waist",
+            "label": "Empire Waist / Underbust",
+            "tip": "Measure directly under the bust seam where the kali flare starts."
+          }
+        ]
+      }
+    }
+  ],
+  "giniSettings": {
+    "state": "on",
+    "displayName": "Gini",
+    "greeting": "Namaste! Hello, how are you? I am Gini, your AI shopping assistant. How can I help you today? Feel free to ask me for kurtis, size recommendations, or order assistance.",
+    "hindiGreeting": "नमस्ते! आप कैसे हैं? मैं गिनी हूँ, आपकी AI शॉपिंग असिस्टेंट। आज मैं आपकी क्या मदद कर सकती हूँ? क्या आप कुर्ती, साइज़ गाइड या ऑर्डर की जानकारी चाहते हैं?",
+    "maintenanceMessage": "Gini voice assistant is undergoing brief routine calibration. You can continue shopping manually.",
+    "allowTextFallback": true,
+    "allowGuestAccess": true,
+    "sessionTimeoutMinutes": 15,
+    "rolloutPercentage": 100,
+    "pilotCustomerEmails": [
+      "kushagraavyukta@gmail.com",
+      "admin@vedaaya.in",
+      "priya.verma@example.com"
+    ],
+    "sttLocale": "en-IN",
+    "sttModel": "chirp_3",
+    "ttsLocale": "en-IN",
+    "ttsVoice": "Sulafat",
+    "speakingRate": 1,
+    "volume": 1,
+    "languagePriority": "bilingual",
+    "launcherPosition": "bottom_right",
+    "launcherOffsetX": 24,
+    "launcherOffsetY": 24,
+    "primaryColor": "#7B2435",
+    "accentColor": "#D4AF37",
+    "drawerWidth": 440,
+    "launcherLabel": "Shop with Gini",
+    "avatarIcon": "sparkles",
+    "undoWindowSeconds": 8,
+    "confirmationExpirySeconds": 60,
+    "requireAddressConfirmation": true,
+    "requireOrderConfirmation": true,
+    "consentVersion": "v1.0-2026",
+    "consentCopy": "Gini processes speech securely using Google Chirp 3 and Gemini models to fulfill your commerce requests. No audio is retained by default.",
+    "rawAudioRetention": false,
+    "transcriptRetentionDays": 30,
+    "enableRedaction": true,
+    "routeAliases": [
+      {
+        "id": "ra-1",
+        "phrase": "kurtis",
+        "routeId": "catalog",
+        "targetPath": "/catalog?category=kurtas-kurtis",
+        "label": "Kurtas & Kurtis",
+        "priority": 10
+      },
+      {
+        "id": "ra-2",
+        "phrase": "suits",
+        "routeId": "catalog",
+        "targetPath": "/catalog?category=anarkali-sets",
+        "label": "Anarkali Suits",
+        "priority": 10
+      },
+      {
+        "id": "ra-3",
+        "phrase": "co-ord sets",
+        "routeId": "catalog",
+        "targetPath": "/catalog?category=co-ord-sets",
+        "label": "Co-ord Sets",
+        "priority": 10
+      },
+      {
+        "id": "ra-4",
+        "phrase": "festive wear",
+        "routeId": "catalog",
+        "targetPath": "/catalog?category=festive-velvet",
+        "label": "Festive Velvet & Silk",
+        "priority": 10
+      },
+      {
+        "id": "ra-5",
+        "phrase": "cart",
+        "routeId": "cart",
+        "targetPath": "/cart",
+        "label": "Shopping Bag",
+        "priority": 10
+      },
+      {
+        "id": "ra-6",
+        "phrase": "bag",
+        "routeId": "cart",
+        "targetPath": "/cart",
+        "label": "Shopping Bag",
+        "priority": 9
+      },
+      {
+        "id": "ra-7",
+        "phrase": "wishlist",
+        "routeId": "wishlist",
+        "targetPath": "/wishlist",
+        "label": "Saved Wishlist",
+        "priority": 10
+      },
+      {
+        "id": "ra-8",
+        "phrase": "home",
+        "routeId": "home",
+        "targetPath": "/",
+        "label": "Home Page",
+        "priority": 10
+      },
+      {
+        "id": "ra-9",
+        "phrase": "orders",
+        "routeId": "orders",
+        "targetPath": "/orders",
+        "label": "My Orders",
+        "priority": 10
+      },
+      {
+        "id": "ra-10",
+        "phrase": "checkout",
+        "routeId": "checkout",
+        "targetPath": "/checkout",
+        "label": "Checkout View",
+        "priority": 10
+      }
+    ],
+    "phraseDictionary": [
+      {
+        "id": "pd-1",
+        "term": "Kurti",
+        "pronunciation": "koor-tee",
+        "normalized": "Kurti",
+        "category": "garment",
+        "locale": "all"
+      },
+      {
+        "id": "pd-2",
+        "term": "Kurtas",
+        "pronunciation": "koor-tahz",
+        "normalized": "Kurta",
+        "category": "garment",
+        "locale": "all"
+      },
+      {
+        "id": "pd-3",
+        "term": "Anarkali",
+        "pronunciation": "uh-nar-kuh-lee",
+        "normalized": "Anarkali",
+        "category": "garment",
+        "locale": "all"
+      },
+      {
+        "id": "pd-4",
+        "term": "Chikankari",
+        "pronunciation": "chih-kahn-kuh-ree",
+        "normalized": "Chikankari",
+        "category": "craft",
+        "locale": "all"
+      },
+      {
+        "id": "pd-5",
+        "term": "Gota Patti",
+        "pronunciation": "go-tah put-tee",
+        "normalized": "Gota Patti",
+        "category": "craft",
+        "locale": "all"
+      },
+      {
+        "id": "pd-6",
+        "term": "Chanderi",
+        "pronunciation": "chun-day-ree",
+        "normalized": "Chanderi Silk",
+        "category": "fabric",
+        "locale": "all"
+      },
+      {
+        "id": "pd-7",
+        "term": "Mulmul",
+        "pronunciation": "mool-mool",
+        "normalized": "Mulmul Cotton",
+        "category": "fabric",
+        "locale": "all"
+      },
+      {
+        "id": "pd-8",
+        "term": "Co-ord",
+        "pronunciation": "koh-ord",
+        "normalized": "Co-ord Set",
+        "category": "garment",
+        "locale": "en-IN"
+      },
+      {
+        "id": "pd-9",
+        "term": "Kamiz",
+        "pronunciation": "kuh-meez",
+        "normalized": "Kurti",
+        "category": "garment",
+        "locale": "hi-IN"
+      },
+      {
+        "id": "pd-10",
+        "term": "Sasti kurtis",
+        "pronunciation": "sus-tee koor-tees",
+        "normalized": "low_price",
+        "category": "command",
+        "locale": "hi-IN"
+      },
+      {
+        "id": "pd-11",
+        "term": "Red",
+        "pronunciation": "red",
+        "normalized": "Crimson Red",
+        "category": "color",
+        "locale": "all"
+      },
+      {
+        "id": "pd-12",
+        "term": "Lal",
+        "pronunciation": "laal",
+        "normalized": "Crimson Red",
+        "category": "color",
+        "locale": "hi-IN"
+      },
+      {
+        "id": "pd-13",
+        "term": "Neela",
+        "pronunciation": "nee-laa",
+        "normalized": "Royal Blue",
+        "category": "color",
+        "locale": "hi-IN"
+      },
+      {
+        "id": "pd-14",
+        "term": "Gulabi",
+        "pronunciation": "goo-laa-bee",
+        "normalized": "Dusty Rose",
+        "category": "color",
+        "locale": "hi-IN"
+      }
+    ],
+    "actionConfigs": [
+      {
+        "actionId": "navigate_route",
+        "name": "Navigate Route (VC-01)",
+        "description": "Resolve route alias and navigate storefront sections (Catalog, Kurtis, Cart, Wishlist, Home, Account)",
+        "enabled": true,
+        "riskLevel": "L0_read",
+        "requireConfirmation": false,
+        "exampleUtterance": "Go to kurtis / Open my wishlist",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "search_products",
+        "name": "Search & Filter Products (VC-02)",
+        "description": "Search catalog with validated category, color, fabric, occasion, and max price parameters",
+        "enabled": true,
+        "riskLevel": "L0_read",
+        "requireConfirmation": false,
+        "exampleUtterance": "Show red cotton kurtis under 2000 rupees",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "set_sort",
+        "name": "Sort Results (VC-03)",
+        "description": "Apply allowlisted sort key (price low to high, high to low, newest, popularity)",
+        "enabled": true,
+        "riskLevel": "L0_read",
+        "requireConfirmation": false,
+        "exampleUtterance": "Sort by newest / Sort price low to high",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "open_product",
+        "name": "Open Product Details (VC-04)",
+        "description": "Open a specific product or ordinal item from the active search results",
+        "enabled": true,
+        "riskLevel": "L0_read",
+        "requireConfirmation": false,
+        "exampleUtterance": "Open the second one / Open Dusty Rose kurti",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "select_variant",
+        "name": "Select Size & Color (VC-05)",
+        "description": "Choose garment size and color variant with real-time stock check",
+        "enabled": true,
+        "riskLevel": "L1_reversible",
+        "requireConfirmation": false,
+        "exampleUtterance": "Choose medium in blue / Select size XL",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "open_size_guide",
+        "name": "Open Size Guide & Fit (VC-06)",
+        "description": "Open standard kurti size chart and Smart Fit assistant",
+        "enabled": true,
+        "riskLevel": "L0_read",
+        "requireConfirmation": false,
+        "exampleUtterance": "Show size guide / What is my size?",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "add_cart_item",
+        "name": "Add to Cart (VC-07)",
+        "description": "Add unambiguous selected variant to bag with stock check and undo support",
+        "enabled": true,
+        "riskLevel": "L1_reversible",
+        "requireConfirmation": false,
+        "exampleUtterance": "Add this to cart",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "update_cart_item",
+        "name": "Update Cart Quantity (VC-08)",
+        "description": "Update quantity of item in cart with stock validation",
+        "enabled": true,
+        "riskLevel": "L1_reversible",
+        "requireConfirmation": false,
+        "exampleUtterance": "Make it two / Increase quantity to 3",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "remove_cart_item",
+        "name": "Remove Cart Item (VC-09)",
+        "description": "Remove item from cart with exact read-back and confirmation",
+        "enabled": true,
+        "riskLevel": "L3_high_impact",
+        "requireConfirmation": true,
+        "confirmationTemplate": "Are you sure you want to remove {{productName}} (Size {{size}}) from your bag?",
+        "exampleUtterance": "Remove the kurti from cart",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "apply_coupon",
+        "name": "Apply Promo Coupon (VC-10)",
+        "description": "Validate coupon code against server rules and recalculate bag totals",
+        "enabled": true,
+        "riskLevel": "L1_reversible",
+        "requireConfirmation": false,
+        "exampleUtterance": "Apply coupon FESTIVE10 / Use VEDAAYA20",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "open_checkout",
+        "name": "Proceed to Checkout (VC-11)",
+        "description": "Navigate to checkout view without placing order",
+        "enabled": true,
+        "riskLevel": "L0_read",
+        "requireConfirmation": false,
+        "exampleUtterance": "Proceed to checkout / Go to payment",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "select_saved_address",
+        "name": "Select Delivery Address (VC-12)",
+        "description": "Select registered customer delivery address",
+        "enabled": true,
+        "riskLevel": "L2_sensitive",
+        "requireConfirmation": false,
+        "exampleUtterance": "Use my home address / Deliver to Indiranagar",
+        "minIdentityRequired": "customer"
+      },
+      {
+        "actionId": "select_payment_method",
+        "name": "Select Payment Method (VC-13)",
+        "description": "Select Cash on Delivery or Online Razorpay without collecting secrets",
+        "enabled": true,
+        "riskLevel": "L0_read",
+        "requireConfirmation": false,
+        "exampleUtterance": "Choose cash on delivery / Pay with UPI",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "place_order",
+        "name": "Confirm & Place Order (VC-14)",
+        "description": "Place final order with server stock, price, tax re-verification and read-back confirmation",
+        "enabled": true,
+        "riskLevel": "L3_high_impact",
+        "requireConfirmation": true,
+        "confirmationTemplate": "Please confirm: {{itemCount}} item(s), delivery to {{addressLocality}}, total {{totalFormatted}} via {{paymentMethod}}. Say \"Confirm order\" or tap Confirm.",
+        "exampleUtterance": "Place my order using cash on delivery",
+        "minIdentityRequired": "guest"
+      },
+      {
+        "actionId": "get_order_status",
+        "name": "Order Tracking & Status (VC-15)",
+        "description": "Retrieve current status and courier tracking for user orders",
+        "enabled": true,
+        "riskLevel": "L2_sensitive",
+        "requireConfirmation": false,
+        "exampleUtterance": "Where is my last order? / Track my shipment",
+        "minIdentityRequired": "customer"
+      },
+      {
+        "actionId": "cancel_order",
+        "name": "Cancel Order (VC-16)",
+        "description": "Cancel eligible unfulfilled order with verification and confirmation",
+        "enabled": true,
+        "riskLevel": "L3_high_impact",
+        "requireConfirmation": true,
+        "confirmationTemplate": "Are you sure you want to cancel order #{{orderNumber}}? Total refund of {{totalFormatted}} will be initiated.",
+        "exampleUtterance": "Cancel order 1001",
+        "minIdentityRequired": "customer"
+      },
+      {
+        "actionId": "start_return",
+        "name": "Initiate Return / Exchange (VC-17)",
+        "description": "Initiate return flow for eligible delivered items with confirmation",
+        "enabled": true,
+        "riskLevel": "L3_high_impact",
+        "requireConfirmation": true,
+        "confirmationTemplate": "Initiate return for {{productName}} from order #{{orderNumber}}? A doorstep pickup will be arranged.",
+        "exampleUtterance": "Return the dusty rose kurti",
+        "minIdentityRequired": "customer"
+      },
+      {
+        "actionId": "assistant_control",
+        "name": "Assistant Control (VC-18)",
+        "description": "Mute, stop speaking, repeat message, cancel turn, or show voice help commands",
+        "enabled": true,
+        "riskLevel": "L0_read",
+        "requireConfirmation": false,
+        "exampleUtterance": "Repeat that / Stop / Never mind / Help",
+        "minIdentityRequired": "guest"
+      }
+    ],
+    "version": 1,
+    "publishedAt": "2026-09-02T10:00:00Z",
+    "publishedBy": "Kushagra Avyukta (Super Admin)"
+  },
+  "giniTestFixtures": [
+    {
+      "id": "fix-1",
+      "name": "Discovery: Red cotton kurtis under ₹2,000",
+      "utterance": "Show red cotton kurtis under two thousand rupees",
+      "expectedAction": "search_products",
+      "expectedParams": {
+        "color": "Red",
+        "fabric": "Cotton",
+        "maxPrice": 2000
+      },
+      "language": "en-IN",
+      "mockContext": {
+        "route": "/",
+        "cartItemCount": 0,
+        "isAuthenticated": false
+      }
+    },
+    {
+      "id": "fix-2",
+      "name": "Ordinal Reference: Open the second one",
+      "utterance": "Open the second one",
+      "expectedAction": "open_product",
+      "expectedParams": {
+        "ordinal": 2
+      },
+      "language": "en-IN",
+      "mockContext": {
+        "route": "/catalog",
+        "cartItemCount": 0,
+        "isAuthenticated": false
+      }
+    },
+    {
+      "id": "fix-3",
+      "name": "Variant Selection: Choose medium in blue",
+      "utterance": "Choose medium in blue and add it to cart",
+      "expectedAction": "select_variant",
+      "expectedParams": {
+        "size": "M",
+        "color": "Blue",
+        "alsoAddToCart": true
+      },
+      "language": "en-IN",
+      "mockContext": {
+        "route": "/product/dusty-rose-embroidered-cotton-co-ord-set",
+        "cartItemCount": 1,
+        "isAuthenticated": false,
+        "activeProductId": "prod-1"
+      }
+    },
+    {
+      "id": "fix-4",
+      "name": "Cart Mutation: Add this to cart",
+      "utterance": "Add this to cart",
+      "expectedAction": "add_cart_item",
+      "expectedParams": {
+        "quantity": 1
+      },
+      "language": "en-IN",
+      "mockContext": {
+        "route": "/product/dusty-rose-embroidered-cotton-co-ord-set",
+        "cartItemCount": 0,
+        "isAuthenticated": false,
+        "activeProductId": "prod-1"
+      }
+    },
+    {
+      "id": "fix-5",
+      "name": "Coupon: Apply FESTIVE10",
+      "utterance": "Apply FESTIVE10 coupon",
+      "expectedAction": "apply_coupon",
+      "expectedParams": {
+        "couponCode": "FESTIVE10"
+      },
+      "language": "en-IN",
+      "mockContext": {
+        "route": "/cart",
+        "cartItemCount": 2,
+        "isAuthenticated": true
+      }
+    },
+    {
+      "id": "fix-6",
+      "name": "Hindi Utterance: Mere pichle order ka status batao",
+      "utterance": "मेरे पिछले आर्डर का स्टेटस बताओ",
+      "expectedAction": "get_order_status",
+      "expectedParams": {},
+      "language": "hi-IN",
+      "mockContext": {
+        "route": "/",
+        "cartItemCount": 0,
+        "isAuthenticated": true
+      }
+    },
+    {
+      "id": "fix-7",
+      "name": "High Impact: Place my order cash on delivery",
+      "utterance": "Place my order using cash on delivery",
+      "expectedAction": "place_order",
+      "expectedParams": {
+        "paymentMethod": "cod"
+      },
+      "language": "en-IN",
+      "mockContext": {
+        "route": "/checkout",
+        "cartItemCount": 2,
+        "isAuthenticated": true
+      }
+    }
+  ]
+}

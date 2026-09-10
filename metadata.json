@@ -1,0 +1,6 @@
+{
+  "name": "Nandita Fashion",
+  "description": "A premium women's ethnic fashion & kurti e-commerce platform with Gini Voice Commerce Assistant for voice navigation, product discovery, variant selection, cart management, and admin controls.",
+  "requestFramePermissions": ["microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
