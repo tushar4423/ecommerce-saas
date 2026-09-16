@@ -175,11 +175,11 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
 
   return (
     <aside
-      className={`bg-white border-r border-neutral-200 flex flex-col justify-between transition-all duration-200 shrink-0 ${
+      className={`min-h-0 bg-white border-r border-neutral-200 flex flex-col transition-all duration-200 shrink-0 ${
         collapsed ? 'w-20' : 'w-64 sm:w-72'
       }`}
     >
-      <div className="p-4 flex flex-col flex-1 overflow-y-auto">
+      <div className="min-h-0 p-4 flex flex-col flex-1 overflow-y-auto overscroll-contain">
         {/* User Card Pill */}
         {!collapsed && adminUser && (
           <div className="mb-4 p-3 bg-[#FAF6F0] rounded-2xl border border-[#EADBDA] flex items-center justify-between">
@@ -246,7 +246,7 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
       </div>
 
       {/* Footer Controls */}
-      <div className="p-3 border-t border-neutral-100 flex flex-col gap-2">
+      <div className="shrink-0 p-3 border-t border-neutral-100 flex flex-col gap-2">
         {/* Role Switcher for Fast Evaluation */}
         {!collapsed && (
           <div className="px-2 py-1.5 bg-[#FAF6F0] rounded-xl border border-neutral-200 text-[10px]">

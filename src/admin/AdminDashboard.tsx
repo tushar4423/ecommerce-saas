@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useGetProductsQuery, useGetOrdersQuery, useGetCategoriesQuery } from '../store/api/ecommerceApi';
 import { AdminAuthProvider, useAdminAuth } from './auth/AdminAuthContext';
 import { AdminLoginPage } from './auth/AdminLoginPage';
@@ -41,6 +41,12 @@ const AdminDashboardInner: React.FC<AdminDashboardProps> = ({
   const [activeSection, setActiveSection] = useState<AdminSection>('overview');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const mainRef = useRef<HTMLElement>(null);
+
+  const handleSelectSection = (section: AdminSection) => {
+    setActiveSection(section);
+    if (mainRef.current) mainRef.current.scrollTop = 0;
+  };
 
   const { data: products = [], refetch: refetchProducts } = useGetProductsQuery();
   const { data: orders = [], refetch: refetchOrders } = useGetOrdersQuery(undefined, {
@@ -74,7 +80,7 @@ const AdminDashboardInner: React.FC<AdminDashboardProps> = ({
   const pendingOrders = orders.filter((o) => o.orderStatus === 'Pending' || o.orderStatus === 'Processing');
 
   return (
-    <div className="min-h-screen bg-[#FAF6F0] text-neutral-900 flex flex-col">
+    <div className="h-screen h-dvh overflow-hidden bg-[#FAF6F0] text-neutral-900 flex flex-col">
       {/* Top Header */}
       <AdminHeader
         onReturnToStore={onReturnToStore}
@@ -83,11 +89,11 @@ const AdminDashboardInner: React.FC<AdminDashboardProps> = ({
       />
 
       {/* Main Workspace with Sidebar */}
-      <div className="flex-1 flex max-w-[1920px] w-full mx-auto overflow-hidden">
+      <div className="flex-1 min-h-0 flex max-w-[1920px] w-full mx-auto overflow-hidden">
         {/* Left Sidebar */}
         <AdminSidebar
           activeSection={activeSection}
-          onSelectSection={setActiveSection}
+          onSelectSection={handleSelectSection}
           collapsed={sidebarCollapsed}
           onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
           productCount={products.length}
@@ -97,10 +103,10 @@ const AdminDashboardInner: React.FC<AdminDashboardProps> = ({
         />
 
         {/* Content Body */}
-        <main className="flex-1 p-4 sm:p-8 overflow-y-auto max-h-[calc(100vh-60px)]">
+        <main ref={mainRef} className="flex-1 min-w-0 min-h-0 p-4 sm:p-8 overflow-y-auto overscroll-contain">
           {activeSection === 'overview' && (
             <AdminDashboardOverview
-              onNavigateSection={setActiveSection}
+              onNavigateSection={handleSelectSection}
             />
           )}
 

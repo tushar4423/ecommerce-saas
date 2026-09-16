@@ -29,7 +29,7 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
   };
 
   return (
-    <header className="bg-white border-b border-neutral-200 sticky top-0 z-30 px-4 sm:px-8 py-3 flex items-center justify-between shadow-xs">
+    <header className="shrink-0 bg-white border-b border-neutral-200 sticky top-0 z-30 px-4 sm:px-8 py-3 flex items-center justify-between shadow-xs">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-xl bg-[#7B2435] text-white flex items-center justify-center font-serif font-black text-sm shadow-xs">
           N
