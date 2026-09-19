@@ -36,6 +36,8 @@ import { useToast } from '../../hooks/useToast';
 import { Modal } from '../../components/ui/Modal';
 import { Input } from '../../components/ui/Input';
 import { Button } from '../../components/ui/Button';
+import { ImageUploadDropzone } from '../../components/ui/ImageUploadDropzone';
+import { api } from '../../services/api';
 
 // Utility helper to safely convert titles to URL slugs
 const slugify = (text: string) => {
@@ -78,6 +80,7 @@ export const MegaMenuManager: React.FC = () => {
   // Promo Card modal
   const [isPromoModalOpen, setIsPromoModalOpen] = useState(false);
   const [editingPromoCard, setEditingPromoCard] = useState<Partial<MenuPromoCard> | null>(null);
+  const [isUploadingPromoImage, setIsUploadingPromoImage] = useState(false);
 
   // Deletion confirm modal
   const [deleteConfirm, setDeleteConfirm] = useState<{
@@ -632,6 +635,23 @@ export const MegaMenuManager: React.FC = () => {
       setEditingPromoCard(null);
     } catch (err: any) {
       toast.error(err?.message || 'Failed to save promo card');
+    }
+  };
+
+  const handlePromoImageSelected = async (dataUrls: string[]) => {
+    const img = dataUrls[0];
+    if (!img) return;
+    setIsUploadingPromoImage(true);
+    try {
+      const ext = img.startsWith('data:image/png') ? 'png' : img.startsWith('data:image/webp') ? 'webp' : 'jpg';
+      const uploaded = await api.uploadMedia(img, `menu-promo-${Date.now()}.${ext}`, editingPromoCard?.title || 'Promo Banner');
+      setEditingPromoCard((p) => ({ ...p, imageUrl: uploaded.url }));
+      toast.success('Promo banner image uploaded!');
+    } catch (err) {
+      setEditingPromoCard((p) => ({ ...p, imageUrl: img }));
+      toast.success('Promo banner image attached!');
+    } finally {
+      setIsUploadingPromoImage(false);
     }
   };
 
@@ -1682,7 +1702,12 @@ export const MegaMenuManager: React.FC = () => {
               <Button variant="outline" size="md" onClick={() => setIsPromoModalOpen(false)}>
                 Cancel
               </Button>
-              <Button variant="primary" size="md" onClick={handleSavePromoCard}>
+              <Button
+                variant="primary"
+                size="md"
+                isLoading={isUploadingPromoImage}
+                onClick={handleSavePromoCard}
+              >
                 Save Promo Banner
               </Button>
             </>
@@ -1704,12 +1729,44 @@ export const MegaMenuManager: React.FC = () => {
               onChange={(e) => setEditingPromoCard((p) => ({ ...p, subtitle: e.target.value }))}
             />
 
-            <Input
-              label="Image URL"
-              placeholder="https://images.unsplash.com/..."
-              value={editingPromoCard?.imageUrl || ''}
-              onChange={(e) => setEditingPromoCard((p) => ({ ...p, imageUrl: e.target.value }))}
-            />
+            <div className="space-y-2 p-3 bg-neutral-50 rounded-2xl border border-neutral-200">
+              <label className="text-xs font-bold uppercase tracking-wider text-neutral-800 flex items-center gap-1.5">
+                <ImageIcon className="w-4 h-4 text-[#7B2435]" />
+                Attached Promo Banner Image *
+              </label>
+              <ImageUploadDropzone
+                compact
+                label="Upload Banner Creative (PNG, JPG, WebP)"
+                helperText="Upload image from device or enter image URL below"
+                showProcessingToast={false}
+                accept="image/png, image/jpeg, image/jpg, image/webp"
+                onImagesSelected={handlePromoImageSelected}
+              />
+              <Input
+                label="Or Direct Image URL"
+                placeholder="https://images.unsplash.com/..."
+                value={editingPromoCard?.imageUrl || ''}
+                onChange={(e) => setEditingPromoCard((p) => ({ ...p, imageUrl: e.target.value }))}
+              />
+              {editingPromoCard?.imageUrl && (
+                <div className="mt-2 rounded-xl overflow-hidden border border-neutral-200 bg-neutral-100 max-h-36 flex items-center justify-center relative group">
+                  <img
+                    src={editingPromoCard.imageUrl}
+                    alt="Promo preview"
+                    className="max-h-36 w-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setEditingPromoCard((p) => ({ ...p, imageUrl: '' }))}
+                    className="absolute top-2 right-2 p-1.5 bg-black/60 hover:bg-black/80 text-white rounded-full transition-colors cursor-pointer"
+                    title="Remove image"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              )}
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Input

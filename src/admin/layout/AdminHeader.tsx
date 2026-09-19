@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Bell, Search, Shield, RefreshCw, FileText, Download } from 'lucide-react';
+import { ExternalLink, RefreshCw, FileText, Download, Menu } from 'lucide-react';
 import { useAdminAuth } from '../auth/AdminAuthContext';
 import { Button } from '../../components/ui/Button';
 import { buildVedaayaFeaturesPdf } from '../../utils/generatePdfDocument';
@@ -9,6 +9,7 @@ interface AdminHeaderProps {
   title?: string;
   onRefreshData?: () => void;
   isRefreshing?: boolean;
+  onOpenMobileSidebar?: () => void;
 }
 
 export const AdminHeader: React.FC<AdminHeaderProps> = ({
@@ -16,6 +17,7 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
   title,
   onRefreshData,
   isRefreshing = false,
+  onOpenMobileSidebar,
 }) => {
   const { adminUser, role } = useAdminAuth();
 
@@ -29,27 +31,37 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
   };
 
   return (
-    <header className="shrink-0 bg-white border-b border-neutral-200 sticky top-0 z-30 px-4 sm:px-8 py-3 flex items-center justify-between shadow-xs">
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-xl bg-[#7B2435] text-white flex items-center justify-center font-serif font-black text-sm shadow-xs">
+    <header className="shrink-0 bg-white border-b border-neutral-200 sticky top-0 z-30 px-3 sm:px-8 py-3 flex items-center justify-between gap-2 shadow-xs">
+      <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+        {onOpenMobileSidebar && (
+          <button
+            type="button"
+            onClick={onOpenMobileSidebar}
+            aria-label="Open admin navigation"
+            className="lg:hidden shrink-0 p-2 rounded-lg text-neutral-700 hover:bg-neutral-100"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+        )}
+        <div className="hidden sm:flex w-8 h-8 shrink-0 rounded-xl bg-[#7B2435] text-white items-center justify-center font-serif font-black text-sm shadow-xs">
           N
         </div>
-        <div>
-          <div className="flex items-center gap-2">
-            <h2 className="font-serif font-bold text-sm sm:text-base text-neutral-900 leading-none">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 min-w-0">
+            <h2 className="font-serif font-bold text-xs sm:text-base text-neutral-900 leading-tight truncate">
               Nandita Fashion Management Suite
             </h2>
-            <span className="hidden sm:inline-block text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full font-bold uppercase">
+            <span className="hidden md:inline-block shrink-0 text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full font-bold uppercase">
               Production DB
             </span>
           </div>
-          <p className="text-[10px] text-neutral-400 font-medium mt-0.5">
+          <p className="hidden sm:block text-[10px] text-neutral-400 font-medium mt-0.5 truncate">
             Role: <span className="text-[#7B2435] font-bold capitalize">{role?.replace('_', ' ')}</span> • Logged in as {adminUser?.email}
           </p>
         </div>
       </div>
 
-      <div className="flex items-center gap-2.5">
+      <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
         <button
           type="button"
           onClick={handleDownloadPdf}

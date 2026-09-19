@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGetProductsQuery, useGetOrdersQuery, useGetCategoriesQuery } from '../store/api/ecommerceApi';
 import { AdminAuthProvider, useAdminAuth } from './auth/AdminAuthContext';
 import { AdminLoginPage } from './auth/AdminLoginPage';
@@ -40,13 +40,24 @@ const AdminDashboardInner: React.FC<AdminDashboardProps> = ({
   const { isAuthenticated, isLoading } = useAdminAuth();
   const [activeSection, setActiveSection] = useState<AdminSection>('overview');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const mainRef = useRef<HTMLElement>(null);
 
   const handleSelectSection = (section: AdminSection) => {
     setActiveSection(section);
+    setMobileSidebarOpen(false);
     if (mainRef.current) mainRef.current.scrollTop = 0;
   };
+
+  useEffect(() => {
+    if (!mobileSidebarOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileSidebarOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [mobileSidebarOpen]);
 
   const { data: products = [], refetch: refetchProducts } = useGetProductsQuery();
   const { data: orders = [], refetch: refetchOrders } = useGetOrdersQuery(undefined, {
@@ -86,16 +97,30 @@ const AdminDashboardInner: React.FC<AdminDashboardProps> = ({
         onReturnToStore={onReturnToStore}
         onRefreshData={handleRefreshData}
         isRefreshing={isRefreshing}
+        onOpenMobileSidebar={() => {
+          setSidebarCollapsed(false);
+          setMobileSidebarOpen(true);
+        }}
       />
 
       {/* Main Workspace with Sidebar */}
       <div className="flex-1 min-h-0 flex max-w-[1920px] w-full mx-auto overflow-hidden">
         {/* Left Sidebar */}
+        {mobileSidebarOpen && (
+          <button
+            type="button"
+            aria-label="Close admin navigation"
+            onClick={() => setMobileSidebarOpen(false)}
+            className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+          />
+        )}
         <AdminSidebar
           activeSection={activeSection}
           onSelectSection={handleSelectSection}
           collapsed={sidebarCollapsed}
           onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
+          mobileOpen={mobileSidebarOpen}
+          onCloseMobile={() => setMobileSidebarOpen(false)}
           productCount={products.length}
           orderCount={orders.length}
           pendingOrdersCount={pendingOrders.length}

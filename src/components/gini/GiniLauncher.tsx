@@ -39,7 +39,7 @@ export const GiniLauncher: React.FC<GiniLauncherProps> = ({
         id="gini-launcher-btn"
         onClick={onOpen}
         aria-label="Open Gini Voice Shopping Assistant"
-        className={`group relative flex items-center gap-2.5 px-4 py-3 rounded-full text-white shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border border-[#D4AF37]/40 ${
+        className={`group relative flex items-center gap-2.5 px-4 py-3 max-sm:p-3 rounded-full text-white shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border border-[#D4AF37]/40 ${
           isListening
             ? 'animate-pulse ring-4 ring-[#D4AF37]/50 shadow-[0_0_25px_rgba(212,175,55,0.6)]'
             : isSpeaking
@@ -67,7 +67,7 @@ export const GiniLauncher: React.FC<GiniLauncherProps> = ({
         </div>
 
         {/* Label */}
-        <div className="relative z-10 flex flex-col items-start pr-1">
+        <div className="relative z-10 hidden sm:flex flex-col items-start pr-1">
           <div className="flex items-center gap-1.5">
             <span className="text-xs font-black tracking-wide font-serif text-[#FAF6F0]">
               Gini Astra
@@ -82,7 +82,7 @@ export const GiniLauncher: React.FC<GiniLauncherProps> = ({
         </div>
 
         {/* Status Dot */}
-        <span className="relative z-10 flex h-2 w-2">
+        <span className="relative z-10 hidden sm:flex h-2 w-2">
           {isListening ? (
             <>
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>

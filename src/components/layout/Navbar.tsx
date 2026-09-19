@@ -209,15 +209,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {/* Merchant Admin Portal Quick Access */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onNavigateToAdmin}
-              leftIcon={<Shield className="w-4 h-4 text-stone-500" />}
-              className="hidden lg:inline-flex text-xs font-bold text-stone-600 hover:text-[var(--brand-primary)]"
-            >
-              Admin Suite
-            </Button>
+            <div className="hidden lg:block">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={onNavigateToAdmin}
+                leftIcon={<Shield className="w-4 h-4 text-stone-500" />}
+                className="text-xs font-bold text-stone-600 hover:text-[var(--brand-primary)]"
+              >
+                Admin Suite
+              </Button>
+            </div>
           </div>
         </div>
 

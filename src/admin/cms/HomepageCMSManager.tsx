@@ -176,6 +176,50 @@ export const HomepageCMSManager: React.FC = () => {
     }
   };
 
+  const handleAddAccessoriesPreset = async () => {
+    const existing = sections.find((s) => s.id === 'sec-accessories' || s.categorySlug === 'accessories');
+    if (existing) {
+      toast.success('Accessories Section is already configured in homepage layout.');
+      setEditingSection(existing);
+      setIsModalOpen(true);
+      return;
+    }
+
+    const accessoriesSection: HomepageSectionConfig = {
+      id: 'sec-accessories',
+      type: 'product_carousel',
+      title: 'Artisanal Accessories & Potlis',
+      subtitle: 'Handcrafted juttis, embroidered velvet potli bags, and heirloom jewelry',
+      badge: 'Handcrafted',
+      categorySlug: 'accessories',
+      layout: 'carousel',
+      order: sections.length + 1,
+      isActive: true,
+      filterCriteria: {
+        category: 'accessories',
+        limit: 8,
+      },
+    };
+
+    const updatedList = [...sections, accessoriesSection];
+    try {
+      await saveSections(updatedList).unwrap();
+      await createAuditLog({
+        adminId: 'adm-current',
+        adminName: 'Admin User',
+        adminEmail: 'admin@vedaaya.in',
+        action: 'cms_create',
+        entityType: 'CMS',
+        entityId: accessoriesSection.id,
+        entityName: accessoriesSection.title,
+        details: 'Added Accessories Section preset to homepage CMS',
+      });
+      toast.success('Accessories Section added to homepage layout!');
+    } catch (err: any) {
+      toast.error(err?.message || 'Failed to add Accessories section');
+    }
+  };
+
   return (
     <div className="space-y-6">
       {/* Header Banner */}
@@ -189,32 +233,42 @@ export const HomepageCMSManager: React.FC = () => {
             Enable/disable sections, adjust display order, change titles, select layouts, and connect dynamic data sources without code changes.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => {
-            setEditingSection({
-              title: '',
-              subtitle: '',
-              badge: 'Exclusive',
-              type: 'product_carousel',
-              layout: 'carousel',
-              isActive: true,
-              filterCriteria: {
-                isBestseller: false,
-                isNewArrival: true,
-                isTrending: false,
-                isPlusSize: false,
-                isFestive: false,
-                limit: 8,
-              },
-            });
-            setIsModalOpen(true);
-          }}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#7B2435] hover:bg-[#621C2A] text-white text-xs font-bold rounded-xl transition cursor-pointer shrink-0 shadow-xs"
-        >
-          <Plus className="w-4 h-4" />
-          Add Storefront Section
-        </button>
+        <div className="flex items-center gap-2.5 shrink-0 flex-wrap">
+          <button
+            type="button"
+            onClick={handleAddAccessoriesPreset}
+            className="inline-flex items-center gap-1.5 px-3.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold rounded-xl transition cursor-pointer shrink-0 shadow-xs"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+            + Add Accessories Section
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setEditingSection({
+                title: '',
+                subtitle: '',
+                badge: 'Exclusive',
+                type: 'product_carousel',
+                layout: 'carousel',
+                isActive: true,
+                filterCriteria: {
+                  isBestseller: false,
+                  isNewArrival: true,
+                  isTrending: false,
+                  isPlusSize: false,
+                  isFestive: false,
+                  limit: 8,
+                },
+              });
+              setIsModalOpen(true);
+            }}
+            className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#7B2435] hover:bg-[#621C2A] text-white text-xs font-bold rounded-xl transition cursor-pointer shrink-0 shadow-xs"
+          >
+            <Plus className="w-4 h-4" />
+            Add Storefront Section
+          </button>
+        </div>
       </div>
 
       {isLoading ? (

@@ -71,6 +71,8 @@ interface AdminSidebarProps {
   onSelectSection: (section: AdminSection) => void;
   collapsed: boolean;
   onToggleCollapse: () => void;
+  mobileOpen?: boolean;
+  onCloseMobile?: () => void;
   productCount?: number;
   orderCount?: number;
   pendingOrdersCount?: number;
@@ -82,6 +84,8 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
   onSelectSection,
   collapsed,
   onToggleCollapse,
+  mobileOpen = false,
+  onCloseMobile,
   productCount = 0,
   orderCount = 0,
   pendingOrdersCount = 0,
@@ -175,10 +179,18 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
 
   return (
     <aside
-      className={`min-h-0 bg-white border-r border-neutral-200 flex flex-col transition-all duration-200 shrink-0 ${
-        collapsed ? 'w-20' : 'w-64 sm:w-72'
+      className={`fixed inset-y-0 left-0 z-50 w-72 min-h-0 bg-white border-r border-neutral-200 flex flex-col transition-transform duration-200 shrink-0 lg:static lg:z-auto lg:translate-x-0 lg:transition-all ${
+        mobileOpen ? 'translate-x-0 visible' : '-translate-x-full invisible lg:visible'
+      } ${
+        collapsed ? 'lg:w-20' : 'lg:w-72'
       }`}
     >
+      <div className="shrink-0 flex items-center justify-between px-4 py-3 border-b border-neutral-100 lg:hidden">
+        <span className="text-sm font-bold text-[#7B2435]">Admin Navigation</span>
+        <button type="button" onClick={onCloseMobile} aria-label="Close admin navigation" className="p-2 rounded-lg hover:bg-neutral-100">
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+      </div>
       <div className="min-h-0 p-4 flex flex-col flex-1 overflow-y-auto overscroll-contain">
         {/* User Card Pill */}
         {!collapsed && adminUser && (

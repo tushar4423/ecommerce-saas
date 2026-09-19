@@ -870,11 +870,93 @@ trait CommerceApiTrait
 
     private function uploadMedia(): array
     {
-        $dataUri = (string) ($this->body['fileData'] ?? ''); if (!preg_match('#^data:(image/(?:jpeg|png|webp|gif));base64,(.+)$#s', $dataUri, $m)) throw new ApiException('Only JPEG, PNG, WebP, or GIF data images are allowed.', 422);
-        $binary = base64_decode($m[2], true); if ($binary === false || strlen($binary) === 0 || strlen($binary) > 8 * 1024 * 1024) throw new ApiException('Image must be valid and no larger than 8 MB.', 422);
-        $finfo = new finfo(FILEINFO_MIME_TYPE); $mime = $finfo->buffer($binary); $extensions = ['image/jpeg' => 'jpg','image/png' => 'png','image/webp' => 'webp','image/gif' => 'gif']; if (!isset($extensions[$mime])) throw new ApiException('The decoded file is not a supported image.', 422);
-        $id = apiId('asset'); $file = $id . '.' . $extensions[$mime]; $dir = dirname(__DIR__) . '/uploads'; if (!is_dir($dir) && !mkdir($dir, 0775, true) && !is_dir($dir)) throw new ApiException('Media directory is unavailable.', 500); $path = $dir . '/' . $file; if (file_put_contents($path, $binary, LOCK_EX) !== strlen($binary)) throw new ApiException('Unable to save the media file.', 500);
-        $url = rtrim((string) envValue('APP_URL', 'https://api.skleup.com/api/ecommerce'), '/') . '/uploads/' . $file; $name = basename((string) ($this->body['fileName'] ?? $file)); $alt = trim((string) ($this->body['altText'] ?? 'Product image'));
-        $this->db->prepare('INSERT INTO media_assets (id,file_name,mime_type,file_size,storage_path,public_url,alt_text,uploaded_by) VALUES (?,?,?,?,?,?,?,?)')->execute([$id, $name, $mime, strlen($binary), $path, $url, $alt, $this->admin['id']]); return $this->result(['id' => $id, 'url' => $url, 'fileName' => $name, 'altText' => $alt], 201);
+        $input = trim((string) ($this->body['fileData'] ?? ''));
+        if ($input === '') {
+            throw new ApiException('Image data or URL is required.', 422);
+        }
+
+        $extensions = [
+            'image/jpeg' => 'jpg',
+            'image/jpg' => 'jpg',
+            'image/png' => 'png',
+            'image/webp' => 'webp',
+            'image/gif' => 'gif',
+            'image/svg+xml' => 'svg',
+        ];
+
+        $dir = dirname(__DIR__) . '/uploads';
+        if (!is_dir($dir) && !mkdir($dir, 0775, true) && !is_dir($dir)) {
+            throw new ApiException('Media directory is unavailable.', 500);
+        }
+
+        $id = apiId('asset');
+        $name = basename((string) ($this->body['fileName'] ?? 'image.jpg'));
+        $alt = trim((string) ($this->body['altText'] ?? 'Uploaded image'));
+        $adminId = $this->admin['id'] ?? 'adm-system';
+
+        // 1. Handle HTTP / HTTPS URL
+        if (preg_match('#^https?://#i', $input)) {
+            $binary = false;
+            try {
+                $ctx = stream_context_create([
+                    'http' => [
+                        'timeout' => 8,
+                        'user_agent' => 'Mozilla/5.0 (Vedaaya Image Fetcher 1.0)',
+                        'follow_location' => 1,
+                        'max_redirects' => 5,
+                    ],
+                    'ssl' => [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                    ],
+                ]);
+                $binary = @file_get_contents($input, false, $ctx);
+            } catch (Throwable) {
+                $binary = false;
+            }
+
+            if ($binary !== false && strlen($binary) > 0 && strlen($binary) <= 12 * 1024 * 1024) {
+                $finfo = new finfo(FILEINFO_MIME_TYPE);
+                $mime = $finfo->buffer($binary);
+                if (isset($extensions[$mime])) {
+                    $ext = $extensions[$mime];
+                    $file = $id . '.' . $ext;
+                    $path = $dir . '/' . $file;
+                    if (file_put_contents($path, $binary, LOCK_EX) === strlen($binary)) {
+                        $url = rtrim((string) envValue('APP_URL', 'https://api.skleup.com/api/ecommerce'), '/') . '/uploads/' . $file;
+                        $this->db->prepare('INSERT INTO media_assets (id,file_name,mime_type,file_size,storage_path,public_url,alt_text,uploaded_by) VALUES (?,?,?,?,?,?,?,?)')
+                            ->execute([$id, $name, $mime, strlen($binary), $path, $url, $alt, $adminId]);
+                        return $this->result(['id' => $id, 'url' => $url, 'fileName' => $name, 'altText' => $alt], 201);
+                    }
+                }
+            }
+
+            // Fallback for external URLs if download blocked
+            $this->db->prepare('INSERT INTO media_assets (id,file_name,mime_type,file_size,storage_path,public_url,alt_text,uploaded_by) VALUES (?,?,?,?,?,?,?,?)')
+                ->execute([$id, $name, 'image/jpeg', 0, null, $input, $alt, $adminId]);
+            return $this->result(['id' => $id, 'url' => $input, 'fileName' => $name, 'altText' => $alt], 201);
+        }
+
+        // 2. Handle Data URI (Base64)
+        if (preg_match('#^data:(image/(?:jpeg|jpg|png|webp|gif|svg\+xml));base64,(.+)$#si', $input, $m)) {
+            $mime = strtolower($m[1]);
+            $binary = base64_decode($m[2], true);
+            if ($binary === false || strlen($binary) === 0 || strlen($binary) > 12 * 1024 * 1024) {
+                throw new ApiException('Image must be valid and no larger than 12 MB.', 422);
+            }
+
+            $ext = $extensions[$mime] ?? 'jpg';
+            $file = $id . '.' . $ext;
+            $path = $dir . '/' . $file;
+            if (file_put_contents($path, $binary, LOCK_EX) !== strlen($binary)) {
+                throw new ApiException('Unable to save the media file.', 500);
+            }
+            $url = rtrim((string) envValue('APP_URL', 'https://api.skleup.com/api/ecommerce'), '/') . '/uploads/' . $file;
+            $this->db->prepare('INSERT INTO media_assets (id,file_name,mime_type,file_size,storage_path,public_url,alt_text,uploaded_by) VALUES (?,?,?,?,?,?,?,?)')
+                ->execute([$id, $name, $mime, strlen($binary), $path, $url, $alt, $adminId]);
+            return $this->result(['id' => $id, 'url' => $url, 'fileName' => $name, 'altText' => $alt], 201);
+        }
+
+        throw new ApiException('Only JPEG, PNG, WebP, GIF, or SVG data images or valid URLs are allowed.', 422);
     }
 }

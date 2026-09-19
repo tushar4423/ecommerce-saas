@@ -10,6 +10,8 @@ export interface ImageUploadDropzoneProps {
   maxFiles?: number;
   className?: string;
   compact?: boolean;
+  showProcessingToast?: boolean;
+  accept?: string;
 }
 
 /**
@@ -52,9 +54,11 @@ export const compressImageFile = (file: File, maxDimension = 1600, quality = 0.8
           return;
         }
 
-        // Fill white background for transparent JPEGs
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fillRect(0, 0, width, height);
+        // Keep PNG transparency for logos; JPEG needs an opaque background.
+        if (file.type !== 'image/png') {
+          ctx.fillStyle = '#FFFFFF';
+          ctx.fillRect(0, 0, width, height);
+        }
         ctx.drawImage(img, 0, 0, width, height);
 
         const mimeType = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
@@ -77,6 +81,8 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
   maxFiles = 10,
   className = '',
   compact = false,
+  showProcessingToast = true,
+  accept = 'image/png, image/jpeg, image/jpg, image/webp, image/svg+xml',
 }) => {
   const toast = useToast();
   const [isDragging, setIsDragging] = useState(false);
@@ -100,11 +106,13 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
       );
 
       onImagesSelected(convertedUrls);
-      toast.success(
-        convertedUrls.length === 1
-          ? 'Image uploaded and processed successfully!'
-          : `${convertedUrls.length} images uploaded and added!`
-      );
+      if (showProcessingToast) {
+        toast.success(
+          convertedUrls.length === 1
+            ? 'Image uploaded and processed successfully!'
+            : `${convertedUrls.length} images uploaded and added!`
+        );
+      }
     } catch (err) {
       console.error('Error processing uploaded image:', err);
       toast.error('Failed to process uploaded image file');
@@ -167,7 +175,7 @@ export const ImageUploadDropzone: React.FC<ImageUploadDropzoneProps> = ({
       <input
         ref={fileInputRef}
         type="file"
-        accept="image/png, image/jpeg, image/jpg, image/webp, image/svg+xml"
+        accept={accept}
         multiple={multiple}
         className="hidden"
         onChange={handleFileInputChange}

@@ -366,7 +366,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
           )}
 
           {isLoading ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
               {Array.from({ length: 6 }).map((_, i) => (
                 <ProductCardSkeleton key={i} />
               ))}
@@ -379,7 +379,7 @@ export const CatalogPage: React.FC<CatalogPageProps> = ({
               onPrimaryAction={() => dispatch(resetFilters())}
             />
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
               {sortedProducts.map((product, idx) => (
                 <ProductCard
                   key={product.id}

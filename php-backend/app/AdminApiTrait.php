@@ -34,7 +34,7 @@ trait AdminApiTrait
 
         $token = rtrim(strtr(base64_encode(random_bytes(48)), '+/', '-_'), '=');
         $sessionId = uuidV4();
-        $expiresAt = gmdate('Y-m-d H:i:s', time() + 12 * 3600);
+        $expiresAt = gmdate('Y-m-d H:i:s', time() + 30 * 86400);
         $this->db->prepare(
             'INSERT INTO admin_sessions (id,admin_id,token_hash,ip_address,user_agent,expires_at) VALUES (?,?,?,?,?,?)'
         )->execute([
@@ -60,6 +60,12 @@ trait AdminApiTrait
     private function adminMe(): array
     {
         $admin = $this->requireAdmin();
+        $token = $this->bearerToken();
+        if ($token) {
+            $newExpires = gmdate('Y-m-d H:i:s', time() + 30 * 86400);
+            $this->db->prepare('UPDATE admin_sessions SET expires_at=? WHERE token_hash=? AND revoked_at IS NULL')
+                ->execute([$newExpires, hash('sha256', $token)]);
+        }
         return $this->result(['authenticated' => true, 'user' => $this->adminPublic($admin)]);
     }
 

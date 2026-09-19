@@ -43,9 +43,20 @@ export const HomePage: React.FC<HomePageProps> = ({
       .sort((a, b) => (a.order || 0) - (b.order || 0));
   }, [dynamicSections]);
 
-  const filterProducts = (criteria?: HomepageSectionConfig['filterCriteria']) => {
-    if (!criteria) return products;
+  const filterProducts = (criteria?: HomepageSectionConfig['filterCriteria'], categorySlug?: string) => {
     let list = [...products];
+    const cat = categorySlug || criteria?.category;
+    if (cat) {
+      const catLower = cat.toLowerCase();
+      list = list.filter(
+        (p) =>
+          p.category?.toLowerCase() === catLower ||
+          p.categorySlug?.toLowerCase() === catLower ||
+          p.subcategory?.toLowerCase() === catLower ||
+          p.tags?.some((t) => t.toLowerCase().includes(catLower))
+      );
+    }
+    if (!criteria) return list.slice(0, 8);
     if (criteria.isBestseller) list = list.filter((p) => p.isBestseller);
     if (criteria.isNewArrival) list = list.filter((p) => p.isNewArrival);
     if (criteria.isTrending) list = list.filter((p) => p.isTrending || p.isBestseller);
@@ -66,9 +77,6 @@ export const HomePage: React.FC<HomePageProps> = ({
           p.name.toLowerCase().includes('zari') ||
           p.name.toLowerCase().includes('anarkali')
       );
-    }
-    if (criteria.category) {
-      list = list.filter((p) => p.category === criteria.category);
     }
     return list.slice(0, criteria.limit || 8);
   };
@@ -112,7 +120,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           case 'product_carousel':
           case 'product_grid': {
-            const sectionProds = filterProducts(section.filterCriteria);
+            const sectionProds = filterProducts(section.filterCriteria, section.categorySlug);
             return (
               <ProductCarousel
                 key={section.id}
@@ -124,7 +132,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                 onSelectProduct={onSelectProduct}
                 onViewAll={() =>
                   onNavigateToCatalog(
-                    section.filterCriteria?.category ||
+                    section.categorySlug ||
+                      section.filterCriteria?.category ||
                       (section.filterCriteria?.isPlusSize ? 'plus-size' : 'all')
                   )
                 }

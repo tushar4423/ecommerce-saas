@@ -28,21 +28,22 @@ import { StoreBranding } from '../../types';
 import { 
   useGetSettingsQuery, 
   useUpdateSettingsMutation,
-  useCreateAuditLogMutation 
 } from '../../store/api/ecommerceApi';
 import { useToast } from '../../hooks/useToast';
+import { api } from '../../services/api';
+import { INITIAL_SETTINGS } from '../../data/mockData';
 
 export const StoreBrandingSettings: React.FC = () => {
   const toast = useToast();
   const { data: branding, isLoading } = useGetSettingsQuery();
   const [updateSettings, { isLoading: isSaving }] = useUpdateSettingsMutation();
-  const [createAuditLog] = useCreateAuditLogMutation();
+  const [isUploadingLogo, setIsUploadingLogo] = useState(false);
 
   const [activeTab, setActiveTab] = useState<'general' | 'colors' | 'contact' | 'tax'>('general');
   const [formData, setFormData] = useState<StoreBranding>({
-    brandName: 'Vedaaya Ethnic',
-    tagline: 'Handcrafted Heritage Royal Ethnic Wear',
-    logoUrl: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=300&q=80',
+    brandName: INITIAL_SETTINGS.storeName,
+    tagline: INITIAL_SETTINGS.tagline,
+    logoUrl: '',
     faviconUrl: '',
     announcementBar: {
       enabled: true,
@@ -53,15 +54,15 @@ export const StoreBrandingSettings: React.FC = () => {
     secondaryColor: '#C98C97',
     accentColor: '#B8860B',
     contact: {
-      phone: '+91 98765 43210',
-      whatsapp: '+91 98765 43210',
-      email: 'care@vedaaya.in',
-      address: 'Plot 42, Heritage Craft Lane, Johari Bazaar, Jaipur, Rajasthan 302001',
+      phone: INITIAL_SETTINGS.supportPhone,
+      whatsapp: '',
+      email: INITIAL_SETTINGS.supportEmail,
+      address: '',
     },
     socialLinks: {
-      instagram: 'https://instagram.com/vedaaya.ethnic',
-      facebook: 'https://facebook.com/vedaaya.ethnic',
-      pinterest: 'https://pinterest.com/vedaaya.ethnic',
+      instagram: '',
+      facebook: '',
+      pinterest: '',
     },
     shippingConfig: {
       freeShippingThreshold: 999,
@@ -70,8 +71,8 @@ export const StoreBrandingSettings: React.FC = () => {
       codFee: 49,
     },
     taxSettings: {
-      gstin: '08AAAAA0000A1Z5',
-      legalBusinessName: 'Vedaaya Ethnic Apparels Pvt Ltd',
+      gstin: INITIAL_SETTINGS.gstNumber || '',
+      legalBusinessName: '',
       defaultHsnCode: '6204',
       taxIncludedInPrice: true,
       gstRate: 5,
@@ -80,29 +81,114 @@ export const StoreBrandingSettings: React.FC = () => {
 
   useEffect(() => {
     if (branding) {
-      setFormData(branding);
+      const phoneVal = branding.contact?.phone || branding.supportPhone || '';
+      const whatsappVal = branding.contact?.whatsapp || branding.socialWhatsapp || '';
+      const emailVal = branding.contact?.email || branding.supportEmail || '';
+      const addressVal = branding.contact?.address || branding.addressText || '';
+
+      setFormData((current) => ({
+        ...current,
+        ...branding,
+        brandName: branding.brandName || branding.storeName || current.brandName,
+        supportPhone: phoneVal || current.supportPhone,
+        socialWhatsapp: whatsappVal || current.socialWhatsapp,
+        supportEmail: emailVal || current.supportEmail,
+        addressText: addressVal || current.addressText,
+        contact: {
+          ...current.contact,
+          ...(branding.contact || {}),
+          phone: phoneVal || current.contact?.phone || '',
+          whatsapp: whatsappVal || current.contact?.whatsapp || '',
+          email: emailVal || current.contact?.email || '',
+          address: addressVal || current.contact?.address || '',
+        },
+        socialLinks: {
+          ...current.socialLinks,
+          ...(branding.socialLinks || {}),
+          instagram: branding.socialInstagram ?? branding.socialLinks?.instagram ?? current.socialLinks?.instagram,
+        },
+        shippingConfig: {
+          ...current.shippingConfig,
+          ...(branding.shippingConfig || {}),
+          freeShippingThreshold: branding.freeShippingThreshold ?? branding.shippingConfig?.freeShippingThreshold ?? current.shippingConfig?.freeShippingThreshold,
+        },
+        taxSettings: {
+          ...current.taxSettings,
+          ...(branding.taxSettings || {}),
+          gstin: branding.gstNumber ?? branding.taxSettings?.gstin ?? current.taxSettings?.gstin,
+        },
+        announcementBar: {
+          ...current.announcementBar,
+          ...(branding.announcementBar || {}),
+          enabled: branding.announcementActive ?? branding.announcementBar?.enabled ?? current.announcementBar?.enabled,
+          text: branding.headerAnnouncementText ?? branding.announcementText ?? branding.announcementBar?.text ?? current.announcementBar?.text,
+        },
+      }));
     }
   }, [branding]);
 
+  const handleLogoSelected = async (images: string[]) => {
+    const image = images[0];
+    if (!image) return;
+    if (image.startsWith('data:image/svg+xml')) {
+      toast.error('Please use a PNG, JPG, or WebP logo. SVG uploads are not supported by the server.');
+      return;
+    }
+
+    setIsUploadingLogo(true);
+    try {
+      const extension = image.startsWith('data:image/png') ? 'png' : image.startsWith('data:image/webp') ? 'webp' : 'jpg';
+      const uploaded = await api.uploadMedia(image, `store-logo-${Date.now()}.${extension}`, formData.brandName || formData.storeName || 'Store logo');
+      setFormData((current) => ({ ...current, logoUrl: uploaded.url }));
+      toast.success('Logo uploaded. Save all settings to apply it to the storefront.');
+    } catch (error: any) {
+      toast.error(error?.message || 'Logo upload failed. Please try again.');
+    } finally {
+      setIsUploadingLogo(false);
+    }
+  };
+
   const handleSave = async () => {
-    if (!formData.brandName.trim()) {
+    const brandName = (formData.brandName ?? formData.storeName ?? '').trim();
+    if (!brandName) {
       toast.error('Brand name is required');
       return;
     }
 
     try {
-      await updateSettings(formData).unwrap();
-      await createAuditLog({
-        adminId: 'adm-current',
-        adminName: 'Admin User',
-        adminEmail: 'admin@vedaaya.in',
-        action: 'settings_update',
-        entityType: 'StoreBranding',
-        entityId: 'global_settings',
-        entityName: formData.brandName,
-        details: `Updated global store branding & theme colors (Primary: ${formData.primaryColor}, GST: ${formData.taxSettings?.gstin})`,
-        newValue: formData,
-      });
+      const announcementText = formData.announcementBar?.text ?? formData.announcementText;
+      const cleanPhone = formData.contact?.phone ?? formData.supportPhone ?? '';
+      const cleanEmail = formData.contact?.email ?? formData.supportEmail ?? '';
+      const cleanWhatsapp = formData.contact?.whatsapp ?? formData.socialWhatsapp ?? '';
+      const cleanAddress = formData.contact?.address ?? formData.addressText ?? '';
+
+      const payload = {
+        ...formData,
+        brandName,
+        storeName: brandName,
+        supportPhone: cleanPhone,
+        supportEmail: cleanEmail,
+        addressText: cleanAddress,
+        socialInstagram: formData.socialLinks?.instagram ?? formData.socialInstagram,
+        socialWhatsapp: cleanWhatsapp,
+        contact: {
+          ...(formData.contact || {}),
+          phone: cleanPhone,
+          whatsapp: cleanWhatsapp,
+          email: cleanEmail,
+          address: cleanAddress,
+        },
+        freeShippingThreshold: formData.shippingConfig?.freeShippingThreshold ?? formData.freeShippingThreshold,
+        gstNumber: formData.taxSettings?.gstin ?? formData.gstNumber,
+        announcementActive: formData.announcementBar?.enabled ?? formData.announcementActive,
+        announcementText,
+        headerAnnouncementText: announcementText,
+      };
+
+      const result = await updateSettings(payload).unwrap();
+      try {
+        localStorage.setItem('vedaaya_store_branding_v2', JSON.stringify({ ...formData, ...result, contact: payload.contact }));
+      } catch {}
       toast.success('Store branding, colors & global settings saved!');
     } catch (err: any) {
       toast.error(err?.message || 'Failed to save settings');
@@ -129,7 +215,7 @@ export const StoreBrandingSettings: React.FC = () => {
           <Button
             variant="primary"
             size="md"
-            isLoading={isSaving}
+            isLoading={isSaving || isUploadingLogo}
             onClick={handleSave}
             leftIcon={<Save className="w-4 h-4" />}
           >
@@ -173,13 +259,11 @@ export const StoreBrandingSettings: React.FC = () => {
                 </label>
                 <ImageUploadDropzone
                   compact
-                  label="Upload Logo (PNG / SVG)"
-                  helperText="Transparent background recommended (Max 5MB)"
-                  onImagesSelected={(urls) => {
-                    if (urls.length > 0) {
-                      setFormData((p) => ({ ...p, logoUrl: urls[0] }));
-                    }
-                  }}
+                  label="Upload Logo (PNG / JPG / WebP)"
+                  helperText="PNG, JPG, or WebP; transparent background recommended"
+                  showProcessingToast={false}
+                  accept="image/png, image/jpeg, image/webp"
+                  onImagesSelected={handleLogoSelected}
                 />
                 <Input
                   label="Or Direct Logo URL"
@@ -394,10 +478,11 @@ export const StoreBrandingSettings: React.FC = () => {
             <Input
               label="Support Phone Number"
               placeholder="+91 98765 43210"
-              value={formData.contact?.phone || ''}
+              value={formData.contact?.phone || formData.supportPhone || ''}
               onChange={(e) =>
                 setFormData((p) => ({
                   ...p,
+                  supportPhone: e.target.value,
                   contact: { ...(p.contact || {}), phone: e.target.value },
                 }))
               }
@@ -407,10 +492,11 @@ export const StoreBrandingSettings: React.FC = () => {
               label="WhatsApp Direct Support Number"
               placeholder="+91 98765 43210"
               helperText="Connected to floating WhatsApp button"
-              value={formData.contact?.whatsapp || ''}
+              value={formData.contact?.whatsapp || formData.socialWhatsapp || ''}
               onChange={(e) =>
                 setFormData((p) => ({
                   ...p,
+                  socialWhatsapp: e.target.value,
                   contact: { ...(p.contact || {}), whatsapp: e.target.value },
                 }))
               }
@@ -419,10 +505,11 @@ export const StoreBrandingSettings: React.FC = () => {
             <Input
               label="Support Email Address"
               placeholder="care@vedaaya.in"
-              value={formData.contact?.email || ''}
+              value={formData.contact?.email || formData.supportEmail || ''}
               onChange={(e) =>
                 setFormData((p) => ({
                   ...p,
+                  supportEmail: e.target.value,
                   contact: { ...(p.contact || {}), email: e.target.value },
                 }))
               }
@@ -431,10 +518,11 @@ export const StoreBrandingSettings: React.FC = () => {
             <Input
               label="Boutique / Atelier Physical Address"
               placeholder="Plot 42, Heritage Craft Lane, Jaipur, Rajasthan 302001"
-              value={formData.contact?.address || ''}
+              value={formData.contact?.address || formData.addressText || ''}
               onChange={(e) =>
                 setFormData((p) => ({
                   ...p,
+                  addressText: e.target.value,
                   contact: { ...(p.contact || {}), address: e.target.value },
                 }))
               }

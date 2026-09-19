@@ -43,7 +43,7 @@ export const FeaturesStrip: React.FC<FeaturesStripProps> = ({ title, subtitle })
             {subtitle && <p className="text-xs text-stone-500">{subtitle}</p>}
           </div>
         )}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((feat, idx) => {
             const Icon = feat.icon;
             return (

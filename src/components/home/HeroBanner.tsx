@@ -184,7 +184,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             <button
               type="button"
               onClick={handlePrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-xs transition shadow-lg z-10 cursor-pointer"
+              className="absolute left-4 bottom-3 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-xs transition shadow-lg z-10 cursor-pointer"
               aria-label="Previous Slide"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -192,7 +192,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
             <button
               type="button"
               onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-xs transition shadow-lg z-10 cursor-pointer"
+              className="absolute right-4 bottom-3 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-xs transition shadow-lg z-10 cursor-pointer"
               aria-label="Next Slide"
             >
               <ChevronRight className="w-5 h-5" />

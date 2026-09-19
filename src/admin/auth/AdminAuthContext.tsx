@@ -36,7 +36,10 @@ export const AdminAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         if (res && res.authenticated && res.user) {
           setAdminUser(res.user);
           setToken(savedToken);
-        } else {
+        } else if (res && res.isNetworkError) {
+          // Keep token on transient network blip
+          setToken(savedToken);
+        } else if (res && res.error === 'Session expired') {
           // Token expired or invalid
           localStorage.removeItem('vedaaya_admin_token');
           setAdminUser(null);

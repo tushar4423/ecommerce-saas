@@ -112,22 +112,33 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             setUser(asUser(session.user, 'admin'));
             setIsAdminAuthenticated(true);
             return;
+          } else if (session?.isNetworkError) {
+            setIsAdminAuthenticated(true);
+            return;
           }
-          localStorage.removeItem(ADMIN_TOKEN_KEY);
+          if (session?.error === 'Session expired') {
+            localStorage.removeItem(ADMIN_TOKEN_KEY);
+          }
         }
 
         if (fbUser && !adminLoginInProgress.current) {
           await applyCustomerSession(fbUser);
         } else if (!fbUser) {
           localStorage.removeItem(CUSTOMER_TOKEN_KEY);
-          setUser(null);
-          setIsAdminAuthenticated(false);
+          const hasAdminToken = !!localStorage.getItem(ADMIN_TOKEN_KEY);
+          if (!hasAdminToken) {
+            setUser(null);
+            setIsAdminAuthenticated(false);
+          }
         }
       } catch (error) {
         console.error('Authentication session restore failed:', error);
         localStorage.removeItem(CUSTOMER_TOKEN_KEY);
-        setUser(null);
-        setIsAdminAuthenticated(false);
+        const hasAdminToken = !!localStorage.getItem(ADMIN_TOKEN_KEY);
+        if (!hasAdminToken) {
+          setUser(null);
+          setIsAdminAuthenticated(false);
+        }
       } finally {
         if (active) setLoading(false);
       }

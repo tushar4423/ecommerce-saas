@@ -683,7 +683,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             </button>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
             {relatedProducts.map((p) => (
               <ProductCard
                 key={p.id}
@@ -706,7 +706,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <p className="text-xs text-neutral-500">Kurtis and ensembles you explored earlier</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
             {recentlyViewed.map((p) => (
               <ProductCard
                 key={`recent-${p.id}`}

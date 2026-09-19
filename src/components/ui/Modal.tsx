@@ -78,10 +78,10 @@ export const Modal: React.FC<ModalProps> = ({
           >
             {/* Header */}
             {(title || showCloseButton) && (
-              <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-100 bg-[#FAF6F0]/50 shrink-0">
-                <div>
+              <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 border-b border-neutral-100 bg-[#FAF6F0]/50 shrink-0">
+                <div className="min-w-0">
                   {typeof title === 'string' ? (
-                    <h3 className="font-serif text-lg font-bold text-neutral-900">{title}</h3>
+                    <h3 className="font-serif text-lg font-bold text-neutral-900 break-words">{title}</h3>
                   ) : (
                     title
                   )}
@@ -91,7 +91,8 @@ export const Modal: React.FC<ModalProps> = ({
                   <button
                     type="button"
                     onClick={onClose}
-                    className="p-1.5 text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 rounded-full transition-colors cursor-pointer"
+                    aria-label="Close dialog"
+                    className="shrink-0 p-1.5 text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 rounded-full transition-colors cursor-pointer"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -100,7 +101,7 @@ export const Modal: React.FC<ModalProps> = ({
             )}
 
             {/* Body */}
-            <div className="p-6 overflow-y-auto flex-1">{children}</div>
+            <div className="p-4 sm:p-6 overflow-y-auto flex-1">{children}</div>
 
             {/* Footer */}
             {footer && (

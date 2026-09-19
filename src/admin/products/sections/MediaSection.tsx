@@ -19,6 +19,7 @@ import { Input } from '../../../components/ui/Input';
 import { ImageUploadDropzone } from '../../../components/ui/ImageUploadDropzone';
 import { Product, ProductImage } from '../../../types';
 import { api } from '../../../services/api';
+import { useToast } from '../../../hooks/useToast';
 
 export interface MediaSectionProps {
   formData: Partial<Product>;
@@ -26,6 +27,7 @@ export interface MediaSectionProps {
 }
 
 export const MediaSection: React.FC<MediaSectionProps> = ({ formData, setFormData }) => {
+  const toast = useToast();
   const [newImageUrl, setNewImageUrl] = useState('');
   const [activeTab, setActiveTab] = useState<'upload' | 'url' | 'video'>('upload');
   const [editingAltId, setEditingAltId] = useState<string | null>(null);
@@ -39,37 +41,71 @@ export const MediaSection: React.FC<MediaSectionProps> = ({ formData, setFormDat
     setIsUploading(true);
 
     try {
-      // Upload each to storage endpoint
-      const uploadedImages: ProductImage[] = await Promise.all(
-        urls.map(async (url, idx) => {
+      const uploadedImages: ProductImage[] = [];
+
+      for (let idx = 0; idx < urls.length; idx++) {
+        const url = urls[idx];
+        const isFirst = images.length === 0 && idx === 0;
+        try {
           const res = await api.uploadMedia(url, `product-${Date.now()}-${idx}.jpg`, formData.name);
-          return {
+          uploadedImages.push({
             id: res.id || `img-${Date.now()}-${idx}`,
             url: res.url,
             altText: res.altText || formData.name || 'Product Image',
-            isPrimary: images.length === 0 && idx === 0,
-          };
-        })
-      );
+            isPrimary: isFirst,
+          });
+        } catch (singleErr) {
+          console.warn('Backend storage upload fallback to local image data:', singleErr);
+          // Always preserve user photo even if server storage endpoint encounters issue
+          uploadedImages.push({
+            id: `img-${Date.now()}-${idx}`,
+            url: url,
+            altText: formData.name || 'Product Image',
+            isPrimary: isFirst,
+          });
+        }
+      }
 
-      setFormData((prev) => ({
-        ...prev,
-        images: [...(prev.images || []), ...uploadedImages],
-      }));
+      if (uploadedImages.length > 0) {
+        setFormData((prev) => ({
+          ...prev,
+          images: [...(prev.images || []), ...uploadedImages],
+        }));
+        toast.success(
+          uploadedImages.length === 1
+            ? 'Photo added to product!'
+            : `${uploadedImages.length} photos added to product!`
+        );
+      }
+    } catch (err: any) {
+      console.error('Failed to process photos:', err);
+      toast.error(err?.message || 'Failed to upload photo');
     } finally {
       setIsUploading(false);
     }
   };
 
   const handleAddUrlImage = async () => {
-    if (!newImageUrl.trim()) return;
+    const rawUrl = newImageUrl.trim();
+    if (!rawUrl) return;
     setIsUploading(true);
 
     try {
-      const res = await api.uploadMedia(newImageUrl.trim(), `url-img-${Date.now()}.jpg`, formData.name);
+      let finalUrl = rawUrl;
+      try {
+        const res = await api.uploadMedia(rawUrl, `url-img-${Date.now()}.jpg`, formData.name);
+        if (res?.url) {
+          finalUrl = res.url;
+        }
+      } catch (uploadErr) {
+        console.warn('URL upload to storage fallback to direct URL:', uploadErr);
+        // Retain direct URL if server fetch is unavailable
+        finalUrl = rawUrl;
+      }
+
       const newImg: ProductImage = {
-        id: res.id || `img-${Date.now()}`,
-        url: res.url,
+        id: `img-${Date.now()}`,
+        url: finalUrl,
         altText: formData.name || 'Product Image',
         isPrimary: images.length === 0,
       };
@@ -79,6 +115,9 @@ export const MediaSection: React.FC<MediaSectionProps> = ({ formData, setFormDat
         images: [...(prev.images || []), newImg],
       }));
       setNewImageUrl('');
+      toast.success('Photo added to product from URL!');
+    } catch (err: any) {
+      toast.error(err?.message || 'Failed to add image URL');
     } finally {
       setIsUploading(false);
     }

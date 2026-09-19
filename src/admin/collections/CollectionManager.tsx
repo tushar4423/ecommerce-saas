@@ -28,6 +28,9 @@ import {
   useGetCategoriesQuery,
 } from '../../store/api/ecommerceApi';
 import { Collection, CollectionRule, Product } from '../../types';
+import { useToast } from '../../hooks/useToast';
+import { ImageUploadDropzone } from '../../components/ui/ImageUploadDropzone';
+import { api } from '../../services/api';
 
 export const CollectionManager: React.FC = () => {
   const { data: collections = [], isLoading } = useGetCollectionsQuery();
@@ -37,6 +40,9 @@ export const CollectionManager: React.FC = () => {
   const [createCollection, { isLoading: isCreating }] = useCreateCollectionMutation();
   const [updateCollection, { isLoading: isUpdating }] = useUpdateCollectionMutation();
   const [deleteCollection, { isLoading: isDeleting }] = useDeleteCollectionMutation();
+  const toast = useToast();
+  const [isUploadingBanner, setIsUploadingBanner] = useState(false);
+  const [isUploadingCover, setIsUploadingCover] = useState(false);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'inactive'>('all');
@@ -210,9 +216,46 @@ export const CollectionManager: React.FC = () => {
     setIsModalOpen(true);
   };
 
+  const handleBannerUploaded = async (urls: string[]) => {
+    const img = urls[0];
+    if (!img) return;
+    setIsUploadingBanner(true);
+    try {
+      const ext = img.startsWith('data:image/png') ? 'png' : img.startsWith('data:image/webp') ? 'webp' : 'jpg';
+      const uploaded = await api.uploadMedia(img, `col-banner-${Date.now()}.${ext}`, formData.name || 'Collection Banner');
+      setFormData((p) => ({ ...p, bannerUrl: uploaded.url }));
+      toast.success('Collection banner uploaded!');
+    } catch {
+      setFormData((p) => ({ ...p, bannerUrl: img }));
+      toast.success('Collection banner attached!');
+    } finally {
+      setIsUploadingBanner(false);
+    }
+  };
+
+  const handleCoverUploaded = async (urls: string[]) => {
+    const img = urls[0];
+    if (!img) return;
+    setIsUploadingCover(true);
+    try {
+      const ext = img.startsWith('data:image/png') ? 'png' : img.startsWith('data:image/webp') ? 'webp' : 'jpg';
+      const uploaded = await api.uploadMedia(img, `col-cover-${Date.now()}.${ext}`, formData.name || 'Collection Cover');
+      setFormData((p) => ({ ...p, imageUrl: uploaded.url }));
+      toast.success('Collection cover image uploaded!');
+    } catch {
+      setFormData((p) => ({ ...p, imageUrl: img }));
+      toast.success('Collection cover image attached!');
+    } finally {
+      setIsUploadingCover(false);
+    }
+  };
+
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name.trim()) return;
+    if (!formData.name.trim()) {
+      toast.error('Collection name is required');
+      return;
+    }
 
     const autoSlug =
       formData.slug.trim() ||
@@ -238,17 +281,29 @@ export const CollectionManager: React.FC = () => {
       productCount: matchedInForm.length,
     };
 
-    if (editingCollection) {
-      await updateCollection({ id: editingCollection.id, updates: payload });
-    } else {
-      await createCollection(payload);
+    try {
+      if (editingCollection) {
+        await updateCollection({ id: editingCollection.id, updates: payload }).unwrap();
+        toast.success(`Collection "${payload.name}" updated successfully!`);
+      } else {
+        await createCollection(payload).unwrap();
+        toast.success(`Collection "${payload.name}" created successfully!`);
+      }
+      setIsModalOpen(false);
+    } catch (err: any) {
+      console.error('Save collection error:', err);
+      toast.error(err?.message || 'Failed to save collection');
     }
-    setIsModalOpen(false);
   };
 
   const handleDelete = async (id: string, name: string) => {
     if (window.confirm(`Are you sure you want to delete the collection "${name}"?`)) {
-      await deleteCollection(id);
+      try {
+        await deleteCollection(id).unwrap();
+        toast.success(`Collection "${name}" deleted.`);
+      } catch (err: any) {
+        toast.error(err?.message || 'Failed to delete collection');
+      }
     }
   };
 
@@ -590,28 +645,84 @@ export const CollectionManager: React.FC = () => {
 
               {/* Banner & Cover Image */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold text-neutral-700 mb-1">
-                    Banner URL (Desktop 1200x400)
+                <div className="space-y-2 p-3 bg-neutral-50 rounded-xl border border-neutral-200">
+                  <label className="block text-xs font-bold text-neutral-700 flex items-center gap-1.5">
+                    <ImageIcon className="w-3.5 h-3.5 text-[#7B2435]" />
+                    Banner Graphic (Desktop 1200x400)
                   </label>
+                  <ImageUploadDropzone
+                    compact
+                    label="Upload Banner (PNG, JPG, WebP)"
+                    helperText="Upload image or specify URL below"
+                    showProcessingToast={false}
+                    accept="image/png, image/jpeg, image/jpg, image/webp"
+                    onImagesSelected={handleBannerUploaded}
+                  />
                   <input
                     type="text"
+                    placeholder="Or Direct Banner URL"
                     value={formData.bannerUrl}
                     onChange={(e) => setFormData({ ...formData, bannerUrl: e.target.value })}
-                    className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:outline-none focus:border-[#7B2435]"
+                    className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:outline-none focus:border-[#7B2435] bg-white"
                   />
+                  {formData.bannerUrl && (
+                    <div className="relative rounded-lg overflow-hidden border border-neutral-200 aspect-[3/1] max-h-24 bg-neutral-100">
+                      <img
+                        src={formData.bannerUrl}
+                        alt="Banner Preview"
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setFormData((p) => ({ ...p, bannerUrl: '' }))}
+                        className="absolute top-1 right-1 p-1 bg-black/60 hover:bg-black/80 text-white rounded-full transition cursor-pointer"
+                        title="Remove banner"
+                      >
+                        <Trash2 className="w-3 h-3" />
+                      </button>
+                    </div>
+                  )}
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-neutral-700 mb-1">
-                    Card Cover URL (Portrait 600x800)
+                <div className="space-y-2 p-3 bg-neutral-50 rounded-xl border border-neutral-200">
+                  <label className="block text-xs font-bold text-neutral-700 flex items-center gap-1.5">
+                    <ImageIcon className="w-3.5 h-3.5 text-[#7B2435]" />
+                    Card Cover Photo (Portrait 600x800)
                   </label>
+                  <ImageUploadDropzone
+                    compact
+                    label="Upload Cover Photo (PNG, JPG, WebP)"
+                    helperText="Upload image or specify URL below"
+                    showProcessingToast={false}
+                    accept="image/png, image/jpeg, image/jpg, image/webp"
+                    onImagesSelected={handleCoverUploaded}
+                  />
                   <input
                     type="text"
+                    placeholder="Or Direct Cover URL"
                     value={formData.imageUrl}
                     onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                    className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:outline-none focus:border-[#7B2435]"
+                    className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:outline-none focus:border-[#7B2435] bg-white"
                   />
+                  {formData.imageUrl && (
+                    <div className="relative rounded-lg overflow-hidden border border-neutral-200 aspect-[3/4] max-h-24 bg-neutral-100">
+                      <img
+                        src={formData.imageUrl}
+                        alt="Cover Preview"
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setFormData((p) => ({ ...p, imageUrl: '' }))}
+                        className="absolute top-1 right-1 p-1 bg-black/60 hover:bg-black/80 text-white rounded-full transition cursor-pointer"
+                        title="Remove cover"
+                      >
+                        <Trash2 className="w-3 h-3" />
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -973,10 +1084,16 @@ export const CollectionManager: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  disabled={isCreating || isUpdating}
-                  className="px-5 py-2 text-sm font-bold text-white bg-[#7B2435] hover:bg-[#631B2A] rounded-xl shadow-xs disabled:opacity-50"
+                  disabled={isCreating || isUpdating || isUploadingBanner || isUploadingCover}
+                  className="px-5 py-2 text-sm font-bold text-white bg-[#7B2435] hover:bg-[#631B2A] rounded-xl shadow-xs disabled:opacity-50 cursor-pointer"
                 >
-                  {editingCollection ? 'Update Collection' : 'Create Collection'}
+                  {isCreating || isUpdating
+                    ? 'Saving...'
+                    : isUploadingBanner || isUploadingCover
+                    ? 'Uploading Images...'
+                    : editingCollection
+                    ? 'Update Collection'
+                    : 'Create Collection'}
                 </button>
               </div>
             </form>

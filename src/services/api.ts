@@ -282,7 +282,7 @@ export const api = {
   // --------------------------------------------------------------------------
   async getStoreBranding(): Promise<StoreBranding> {
     try {
-      const res = await fetchFromBackend('/settings');
+      const res = await fetchFromBackend('/settings', { cache: 'no-store' });
       if (!res) throw new Error('Settings API is unavailable.');
       return await res.json();
     } catch (error) {
@@ -1346,8 +1346,8 @@ export const api = {
     return { success: false, error: 'Admin login endpoint unavailable' };
   },
 
-  async adminGetMe(token?: string) {
-    const activeToken = token || localStorage.getItem('vedaaya_admin_token');
+  async adminGetMe(token?: string): Promise<{ authenticated: boolean; user?: any; error?: string; isNetworkError?: boolean }> {
+    const activeToken = token || (typeof window !== 'undefined' ? window.localStorage.getItem('vedaaya_admin_token') : null);
     if (!activeToken) return { authenticated: false };
 
     try {
@@ -1359,7 +1359,13 @@ export const api = {
       if (res) {
         return await res.json();
       }
-    } catch {}
+    } catch (err: any) {
+      if (err?.status === 401 || err?.status === 403) {
+        return { authenticated: false, error: 'Session expired' };
+      }
+      // Return authenticated with network error flag so valid token is not wiped out on transient network glitches
+      return { authenticated: true, isNetworkError: true };
+    }
     return { authenticated: false };
   },
 
